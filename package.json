@@ -1,0 +1,14 @@
+{
+  "name": "cheongyak-alert",
+  "version": "1.0.0",
+  "description": "Telegram alerts for 청약 (housing subscription) listings near 성남 — announce / open / closing-soon.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "seed": "SEED_MODE=true node index.js",
+    "test:mock": "node test/mock.test.js"
+  }
+}

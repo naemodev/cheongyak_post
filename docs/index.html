@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>청약 현황 · 성남 주변</title>
+<style>
+  /* ── Notion-style tokens: black/white/gray + one restrained accent ── */
+  :root {
+    --bg: #ffffff;
+    --bg-subtle: #f7f7f5;
+    --card: #ffffff;
+    --border: #ededec;
+    --text: #191919;       /* title  */
+    --text-body: #37352f;  /* body   */
+    --text-2: #787774;     /* secondary */
+    --text-3: #9b9a97;     /* hint   */
+    --accent: #2383e2;
+    --radius: 10px;
+    --maxw: 880px;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg-subtle);
+    color: var(--text-body);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo",
+      "Malgun Gothic", Roboto, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 24px 16px 64px; }
+
+  /* Header */
+  header { margin-bottom: 20px; }
+  h1 { font-size: 22px; font-weight: 700; color: var(--text); margin: 0 0 4px; letter-spacing: -0.01em; }
+  .sub { font-size: 13px; color: var(--text-2); }
+  .updated { font-size: 12px; color: var(--text-3); margin-top: 2px; }
+
+  /* Filters */
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 18px; align-items: center; }
+  .chip {
+    font-size: 13px; padding: 6px 12px; border: 1px solid var(--border);
+    background: var(--card); color: var(--text-2); border-radius: 999px;
+    cursor: pointer; user-select: none; transition: all .12s ease;
+  }
+  .chip:hover { border-color: #d9d9d7; }
+  .chip[aria-pressed="true"] { background: var(--text); color: #fff; border-color: var(--text); }
+  .spacer { flex: 1; }
+  .toggle { font-size: 13px; color: var(--text-2); display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+  .toggle input { accent-color: var(--accent); }
+
+  /* Cards */
+  .list { display: grid; gap: 10px; }
+  .card {
+    background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 14px 16px; transition: opacity .12s ease;
+  }
+  .card.is-closed { opacity: .4; }            /* inactive → opacity-40 per house style */
+  .card-top { display: flex; align-items: flex-start; gap: 10px; }
+  .card-title { font-size: 15px; font-weight: 600; color: var(--text); flex: 1; min-width: 0; }
+  .meta { font-size: 13px; color: var(--text-2); margin-top: 6px; display: grid; gap: 2px; }
+  .meta .row { display: flex; gap: 6px; }
+  .meta .k { color: var(--text-3); flex: 0 0 auto; }
+  .card-foot { display: flex; align-items: center; gap: 10px; margin-top: 10px; }
+  .cat { font-size: 11px; color: var(--text-2); background: var(--bg-subtle); padding: 2px 8px; border-radius: 6px; }
+  .link { font-size: 13px; color: var(--accent); text-decoration: none; margin-left: auto; }
+  .link:hover { text-decoration: underline; }
+
+  /* Status badge */
+  .badge { font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 999px; flex: 0 0 auto; white-space: nowrap; }
+  .badge.closing  { background: #fdecec; color: #c0392b; }
+  .badge.open     { background: #e9f5ee; color: #1f7a4d; }
+  .badge.upcoming { background: #eaf3fb; color: #2383e2; }
+  .badge.closed   { background: #f1f1ef; color: #787774; }
+  .badge.unknown  { background: #f1f1ef; color: #9b9a97; }
+  .dleft { font-size: 12px; color: #c0392b; font-weight: 600; }
+
+  /* Skeleton */
+  .skeleton { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
+  .sk-line { height: 12px; border-radius: 6px; background: linear-gradient(90deg,#eee 25%,#f5f5f5 37%,#eee 63%); background-size: 400% 100%; animation: shimmer 1.4s ease infinite; }
+  .sk-line.w60 { width: 60%; } .sk-line.w40 { width: 40%; margin-top: 8px; } .sk-line.w80 { width: 80%; margin-top: 8px; }
+  @keyframes shimmer { 0% { background-position: 100% 0; } 100% { background-position: -100% 0; } }
+
+  .empty { text-align: center; color: var(--text-3); font-size: 14px; padding: 48px 0; }
+
+  /* Toast (light errors) */
+  .toast {
+    position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%) translateY(20px);
+    background: var(--text); color: #fff; font-size: 13px; padding: 10px 16px; border-radius: 8px;
+    opacity: 0; pointer-events: none; transition: all .2s ease; box-shadow: 0 4px 16px rgba(0,0,0,.18); z-index: 10;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  @media (max-width: 480px) {
+    h1 { font-size: 20px; }
+    .link { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>청약 현황</h1>
+      <div class="sub">성남 · 용인 · 위례 · 하남 · 광주(경기)</div>
+      <div class="updated" id="updated">불러오는 중…</div>
+    </header>
+
+    <div class="filters" id="filters">
+      <span class="chip" data-cat="all" aria-pressed="true">전체</span>
+      <span class="chip" data-cat="APT" aria-pressed="false">APT</span>
+      <span class="chip" data-cat="무순위/잔여" aria-pressed="false">무순위·잔여</span>
+      <span class="chip" data-cat="공공지원임대" aria-pressed="false">공공지원임대</span>
+      <span class="spacer"></span>
+      <label class="toggle"><input type="checkbox" id="showClosed" /> 마감 포함</label>
+    </div>
+
+    <div class="list" id="list" aria-live="polite"></div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+<script>
+  // ── Config / state ──────────────────────────────────────────────────────
+  const DATA_URL = "data/listings.json";
+  const LS_KEY = "cheongyak-dashboard-filters";
+  const saved = (() => { try { return JSON.parse(localStorage.getItem(LS_KEY)) || {}; } catch { return {}; } })();
+  let state = { cat: saved.cat || "all", showClosed: saved.showClosed ?? false, data: null };
+
+  const $list = document.getElementById("list");
+  const $updated = document.getElementById("updated");
+  const $toast = document.getElementById("toast");
+
+  function persist() { localStorage.setItem(LS_KEY, JSON.stringify({ cat: state.cat, showClosed: state.showClosed })); }
+  function esc(s) { return String(s ?? "").replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c])); }
+
+  function toast(msg) {
+    $toast.textContent = msg; $toast.classList.add("show");
+    setTimeout(() => $toast.classList.remove("show"), 3200);
+  }
+
+  function showSkeleton() {
+    $list.innerHTML = Array.from({ length: 4 }).map(() =>
+      `<div class="skeleton"><div class="sk-line w60"></div><div class="sk-line w80"></div><div class="sk-line w40"></div></div>`
+    ).join("");
+  }
+
+  function fmtUpdated(iso) {
+    if (!iso) return "아직 데이터가 없어요. 첫 수집을 기다리는 중…";
+    const d = new Date(iso);
+    const t = d.toLocaleString("ko-KR", { dateStyle: "medium", timeStyle: "short" });
+    return `업데이트 ${t}`;
+  }
+
+  function card(item) {
+    const closedCls = item.status === "closed" ? " is-closed" : "";
+    const dleft = (item.status === "closing" && item.daysLeft != null)
+      ? `<span class="dleft">D-${item.daysLeft}</span>` : "";
+    const rows = [];
+    if (item.address) rows.push(`<div class="row"><span class="k">위치</span><span>${esc(item.address)}</span></div>`);
+    if (item.announceDate) rows.push(`<div class="row"><span class="k">공고일</span><span>${esc(item.announceDate)}</span></div>`);
+    if (item.receiptBegin || item.receiptEnd) rows.push(`<div class="row"><span class="k">접수</span><span>${esc(item.receiptBegin || "?")} ~ ${esc(item.receiptEnd || "?")}</span></div>`);
+    if (item.totalHouseholds) rows.push(`<div class="row"><span class="k">세대</span><span>${esc(item.totalHouseholds)}세대</span></div>`);
+    const link = item.url ? `<a class="link" href="${esc(item.url)}" target="_blank" rel="noopener">공고 보기 →</a>` : "";
+    return `<article class="card${closedCls}">
+      <div class="card-top">
+        <div class="card-title">${esc(item.name || "(이름 미상)")}</div>
+        <span class="badge ${item.status}">${esc(item.statusLabel)}</span>
+        ${dleft}
+      </div>
+      <div class="meta">${rows.join("")}</div>
+      <div class="card-foot"><span class="cat">${esc(item.category)}</span>${link}</div>
+    </article>`;
+  }
+
+  function render() {
+    if (!state.data) return;
+    let items = state.data.items;
+    if (state.cat !== "all") items = items.filter((i) => i.category === state.cat);
+    if (!state.showClosed) items = items.filter((i) => i.status !== "closed");
+
+    if (items.length === 0) {
+      $list.innerHTML = `<div class="empty">조건에 맞는 청약이 없어요.</div>`;
+      return;
+    }
+    $list.innerHTML = items.map(card).join("");
+  }
+
+  async function load() {
+    showSkeleton();
+    try {
+      const res = await fetch(DATA_URL, { cache: "no-store" });
+      if (!res.ok) throw new Error(res.status);
+      state.data = await res.json();
+      $updated.textContent = fmtUpdated(state.data.updatedAt);
+      render();
+    } catch (e) {
+      $updated.textContent = "데이터를 불러오지 못했어요.";
+      $list.innerHTML = `<div class="empty">데이터를 불러오지 못했어요.</div>`;
+      toast("데이터를 불러오지 못했어요. 잠시 후 다시 시도해 주세요.");
+    }
+  }
+
+  // ── Filter wiring ─────────────────────────────────────────────────────────
+  document.getElementById("filters").addEventListener("click", (e) => {
+    const chip = e.target.closest(".chip");
+    if (!chip) return;
+    state.cat = chip.dataset.cat;
+    document.querySelectorAll(".chip").forEach((c) => c.setAttribute("aria-pressed", String(c === chip)));
+    persist(); render();
+  });
+  const $showClosed = document.getElementById("showClosed");
+  $showClosed.checked = state.showClosed;
+  $showClosed.addEventListener("change", () => { state.showClosed = $showClosed.checked; persist(); render(); });
+
+  // Restore saved category chip on load.
+  document.querySelectorAll(".chip").forEach((c) =>
+    c.setAttribute("aria-pressed", String(c.dataset.cat === state.cat)));
+
+  load();
+</script>
+</body>
+</html>
