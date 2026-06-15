@@ -180,9 +180,10 @@
   }
 
   function hashtagBlock(item) {
-    const tags = [item.group, ...(item.personas || [])].filter(Boolean);
+    const tags = (item.tags && item.tags.length) ? item.tags : [item.group, ...(item.personas || [])].filter(Boolean);
+    const personas = item.personas || [];
     return `<div class="hashtags">${tags.map((t) =>
-      `<span class="ht${(item.personas || []).includes(t) ? " persona" : ""}">#${esc(t)}</span>`).join("")}</div>`;
+      `<span class="ht${personas.includes(t) ? " persona" : ""}">#${esc(t)}</span>`).join("")}</div>`;
   }
 
   function card(item) {
@@ -211,8 +212,6 @@
         <textarea data-key="${esc(key)}" placeholder="공고 보러 가서 받은 요약을 여기 적어두세요…">${esc(memo)}</textarea>
       </div>
       <div class="actions">
-        <span class="src">${esc(item.source)}</span>
-        <span class="ht">${esc(item.category)}</span>
         <button class="btn" data-copy="${esc(key)}">🤖 AI 요약 프롬프트 복사</button>
         ${link}
       </div>

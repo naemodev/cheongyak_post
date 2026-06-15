@@ -122,3 +122,24 @@ export function tagsFor(item) {
   const personas = (e?.personas ?? []).filter((p) => PERSONAS.includes(p));
   return { group: item.group, personas };
 }
+
+// Clean a raw type string into a hashtag-friendly token:
+// "공공분양(신혼희망)" → "공공분양", "무순위/잔여" → "무순위", "신혼희망타운" → 그대로.
+function cleanToken(s) {
+  return String(s || "")
+    .replace(/[\(\[][^\)\]]*[\)\]]/g, "") // drop (...) [...]
+    .split(/[\/·,]/)[0]                         // first segment
+    .replace(/\s+/g, "")
+    .trim();
+}
+
+// Final ordered tag list for a listing: source + type + group + personas (deduped).
+export function tagList(item) {
+  const e = matchEligibility(item);
+  const personas = (e?.personas ?? []).filter((p) => PERSONAS.includes(p));
+  const raw = [item.source, cleanToken(item.detailType || item.category), item.group, ...personas];
+  const seen = new Set();
+  const out = [];
+  for (const t of raw) { if (t && !seen.has(t)) { seen.add(t); out.push(t); } }
+  return out;
+}

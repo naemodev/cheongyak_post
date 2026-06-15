@@ -6,7 +6,7 @@ import assert from "node:assert";
 import { filterByRegion, matchesRegion } from "../src/filter.js";
 import { eventsFor } from "../src/triggers.js";
 import { computeStatus, daysLeft } from "../src/status.js";
-import { matchEligibility, tagsFor } from "../src/eligibility.js";
+import { matchEligibility, tagsFor, tagList } from "../src/eligibility.js";
 
 let pass = 0;
 const ok = (cond, msg) => { assert.ok(cond, msg); pass++; };
@@ -55,5 +55,13 @@ tg = tagsFor({ source: "LH", category: "LH 임대", group: "임대", detailType:
 ok(tg.personas.includes("1인가구") && tg.personas.includes("예비신혼부부"), "행복주택 → 1인가구+예비신혼부부");
 tg = tagsFor({ source: "청약홈", category: "무순위/잔여", group: "무순위", detailType: "", name: "x" });
 ok(tg.group === "무순위" && tg.personas.includes("1인가구"), "무순위 → 1인가구");
+
+// ── tagList (merged hashtags) ─────────────────────────────────────────────────
+let tl = tagList({ source: "청약홈", category: "APT", group: "분양", detailType: "신혼희망타운", name: "x" });
+ok(tl.join(" ") === "청약홈 신혼희망타운 분양 예비신혼부부 신혼부부", "청약홈 신혼희망타운 태그열");
+tl = tagList({ source: "청약홈", category: "무순위/잔여", group: "무순위", detailType: "", name: "x" });
+ok(tl[0] === "청약홈" && tl[1] === "무순위" && !tl.includes("무순위/잔여"), "무순위 토큰 정리 + 중복 제거");
+tl = tagList({ source: "LH", category: "LH 분양", group: "분양", detailType: "공공분양(신혼희망)", name: "x" });
+ok(tl.includes("공공분양") && !tl.some((t) => t.includes("(")), "괄호 제거된 타입 토큰");
 
 console.log(`\n✅ all ${pass} assertions passed`);

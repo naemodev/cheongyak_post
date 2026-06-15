@@ -5,7 +5,7 @@
 import { writeFile, mkdir } from "node:fs/promises";
 import { dirname } from "node:path";
 import { computeStatus, daysLeft } from "./status.js";
-import { matchEligibility, BASE_YEAR, PERSONAS } from "./eligibility.js";
+import { matchEligibility, BASE_YEAR, PERSONAS, tagList } from "./eligibility.js";
 import { kstToday } from "./dates.js";
 
 const SNAPSHOT_FILE = "docs/data/listings.json";
@@ -34,6 +34,7 @@ export async function writeSnapshot(listings) {
       statusOrder: status.order,
       daysLeft: daysLeft(l, today),
       personas,
+      tags: tagList(l),
       eligibility: elig
         ? { type: elig.key, single: elig.single, income: elig.income, asset: elig.asset, note: elig.note }
         : null,
