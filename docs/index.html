@@ -90,6 +90,15 @@
   .empty { text-align: center; color: var(--text-3); font-size: 14px; padding: 48px 0; }
   .toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%) translateY(20px); background: var(--text); color: #fff; font-size: 13px; padding: 10px 16px; border-radius: 8px; opacity: 0; pointer-events: none; transition: all .2s ease; box-shadow: 0 4px 16px rgba(0,0,0,.18); z-index: 10; }
   .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  /* Fixed AI prompt box */
+  .promptbox { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 14px; margin: 14px 0; }
+  .promptbox summary { cursor: pointer; font-size: 13px; color: var(--text-2); font-weight: 600; list-style: none; }
+  .promptbox summary::-webkit-details-marker { display: none; }
+  .promptbox summary::before { content: "▸ "; color: var(--text-3); }
+  .promptbox[open] summary::before { content: "▾ "; }
+  .promptbox .pb-body { margin-top: 10px; }
+  .promptbox pre { white-space: pre-wrap; word-break: break-word; font-size: 12px; line-height: 1.45; color: var(--text-body); background: var(--bg-subtle); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; margin: 8px 0 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+
   @media (max-width: 480px) { h1 { font-size: 20px; } .link { margin-left: 0; } }
 </style>
 </head>
@@ -100,6 +109,40 @@
       <div class="sub">성남 · 용인 · 위례 · 하남 · 광주(경기) · 청약홈 + LH</div>
       <div class="updated" id="updated">불러오는 중…</div>
     </header>
+
+    <details class="promptbox">
+      <summary>🤖 AI 요약 프롬프트 — 공고문 PDF와 함께 AI에 넣어 정리받기</summary>
+      <div class="pb-body">
+        <button class="btn" id="copyPromptBtn">📋 프롬프트 복사</button>
+        <pre id="promptText">첨부한 청약 공고문(PDF)을 읽고 아래 항목을 순서대로 정리해줘.
+공고에 없는 내용은 "공고에 명시 없음"이라고 적어줘. 숫자는 공고문 그대로 정확히.
+
+# 기본 정보
+- 공고일:
+- 접수기간:
+- 위치:
+- 세대수:
+
+# 순위별(공급유형별) 조건
+공급 순위/유형별로 아래를 각각 정리:
+- 1순위 (비율 %):
+  - 신청 대상: (예: 신혼부부만, 무주택세대구성원 등)
+  - 소득 조건: (도시근로자 월평균소득 기준 % 및 금액)
+  - 자산 조건: (총자산·자동차 기준액)
+- 2순위 (비율 %): (위와 동일 형식)
+- 3순위 (비율 %): (위와 동일 형식)
+
+# 특이사항
+- 자격 제한: (예: 혼인 7년 이내·예비부부·6세 이하 자녀 한부모, 거주요건 등)
+- 기타: (재당첨 제한, 전매제한 등)
+
+# 내 해당 여부
+- 1인 가구 신청 가능?:
+- 예비 신혼부부 신청 가능?:
+
+표 대신 위 불릿 구조 그대로 정리해줘.</pre>
+      </div>
+    </details>
 
     <div class="filter-group">
       <div class="filter-label">유형</div>
@@ -171,7 +214,6 @@
     const mark = e.single === "가능" ? "✅" : e.single === "조건부" ? "△" : "❌";
     const yr = (state.data && state.data.eligibilityBaseYear) || "";
     return `<div class="elig">
-      <div class="single ${cls}">👤 1인 가구 ${mark} ${esc(e.single)}</div>
       <div class="er"><span class="ek">소득</span><span>${esc(e.income)}</span></div>
       <div class="er"><span class="ek">자산</span><span>${esc(e.asset)}</span></div>
       ${e.note ? `<div class="er"><span class="ek">비고</span><span>${esc(e.note)}</span></div>` : ""}
@@ -212,7 +254,6 @@
         <textarea data-key="${esc(key)}" placeholder="공고 보러 가서 받은 요약을 여기 적어두세요…">${esc(memo)}</textarea>
       </div>
       <div class="actions">
-        <button class="btn" data-copy="${esc(key)}">🤖 AI 요약 프롬프트 복사</button>
         ${link}
       </div>
     </article>`;
@@ -227,25 +268,11 @@
     $list.innerHTML = items.length ? items.map(card).join("") : `<div class="empty">조건에 맞는 청약이 없어요.</div>`;
   }
 
-  // Build the AI prompt the user pastes after opening a 공고.
-  function aiPrompt(item) {
-    return [
-      "다음 청약 공고문을 보고 아래를 요약해줘:",
-      "1) 소득 기준 (가구원수별, 1인 가구 기준 명시)",
-      "2) 자산·자동차 기준",
-      "3) 무주택·거주 요건",
-      "4) '1인 가구'와 '예비 신혼부부'가 각각 신청 가능한지",
-      "",
-      `공고명: ${item.name || ""}`,
-      item.url ? `링크: ${item.url}` : "",
-    ].filter(Boolean).join("\n");
-  }
-
-  async function copyPrompt(key) {
-    const item = (state.data.items || []).find((i) => memoKey(i) === key);
-    if (!item) return;
-    try { await navigator.clipboard.writeText(aiPrompt(item)); toast("AI 프롬프트를 복사했어요. 공고 페이지에서 붙여넣으세요."); }
-    catch { toast("복사 실패 — 길게 눌러 직접 복사해 주세요."); }
+  // Copy the fixed AI summary prompt (used together with a 공고문 PDF).
+  async function copyFixedPrompt() {
+    const text = document.getElementById("promptText").textContent;
+    try { await navigator.clipboard.writeText(text); toast("프롬프트를 복사했어요. 공고문 PDF와 함께 AI에 넣으세요."); }
+    catch { toast("복사 실패 — 프롬프트를 길게 눌러 직접 복사해 주세요."); }
   }
 
   // ── Events ───────────────────────────────────────────────────────────────
@@ -273,10 +300,7 @@
     memos[ta.dataset.key] = ta.value;
     clearTimeout(memoTimer); memoTimer = setTimeout(persistMemos, 400);
   });
-  $list.addEventListener("click", (e) => {
-    const btn = e.target.closest("button[data-copy]"); if (!btn) return;
-    copyPrompt(btn.dataset.copy);
-  });
+  document.getElementById("copyPromptBtn").addEventListener("click", copyFixedPrompt);
 
   async function load() {
     showSkeleton();
