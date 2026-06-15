@@ -1,7 +1,7 @@
 {
-  "name": "cheongyak-alert",
+  "name": "cheongyak_post",
   "version": "1.0.0",
-  "description": "Telegram alerts for 청약 (housing subscription) listings near 성남 — announce / open / closing-soon.",
+  "description": "청약우체부 — Telegram alerts + dashboard for 청약 listings near 성남.",
   "type": "module",
   "engines": {
     "node": ">=20"

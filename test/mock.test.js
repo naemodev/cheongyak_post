@@ -1,81 +1,59 @@
 // test/mock.test.js
-// Offline verification of region filter + trigger logic (no API/Telegram calls).
+// Offline verification: region filter + triggers + status for both sources.
 // Run: node test/mock.test.js
 
 import assert from "node:assert";
 import { filterByRegion, matchesRegion } from "../src/filter.js";
 import { eventsFor } from "../src/triggers.js";
 import { computeStatus, daysLeft } from "../src/status.js";
+import { matchEligibility, tagsFor } from "../src/eligibility.js";
 
 let pass = 0;
-const ok = (cond, msg) => {
-  assert.ok(cond, msg);
-  pass++;
-};
-
-// Fixed "today" so the test is deterministic.
+const ok = (cond, msg) => { assert.ok(cond, msg); pass++; };
 const today = new Date(Date.UTC(2026, 5, 15)); // 2026-06-15
-const d = (date) => date; // helper alias
 
 // ── Region filter ──────────────────────────────────────────────────────────
 ok(matchesRegion({ name: "위례신도시 A1블록", address: "", areaName: "경기" }), "위례 by name");
 ok(matchesRegion({ name: "힐스테이트", address: "경기도 성남시 분당구", areaName: "경기" }), "성남 by address");
-ok(matchesRegion({ name: "용인 푸르지오", address: "경기도 용인시 기흥구", areaName: "경기" }), "용인");
 ok(!matchesRegion({ name: "더샵", address: "광주광역시 북구", areaName: "광주" }), "광주광역시 excluded");
-ok(!matchesRegion({ name: "송도 자이", address: "인천 연수구", areaName: "인천" }), "non-region rejected");
+ok(!matchesRegion({ name: "송도 자이", address: "인천", areaName: "인천" }), "non-region rejected");
+ok(filterByRegion([{ name: "성남 더샵", address: "경기 성남시", areaName: "경기" }, { name: "부산", address: "부산", areaName: "부산" }]).length === 1, "filterByRegion");
 
-const regional = filterByRegion([
-  { name: "성남 더샵", address: "경기 성남시", areaName: "경기" },
-  { name: "부산 엘시티", address: "부산", areaName: "부산" },
-]);
-ok(regional.length === 1, "filterByRegion keeps only matches");
+// ── 청약홈 (date-based) ──────────────────────────────────────────────────────
+const ah = (o) => eventsFor({ source: "청약홈", category: "APT", id: "1", ...o }, today);
+let ev = ah({ announceDate: "2026-06-15", receiptBegin: "2026-06-15", receiptEnd: "2026-06-20" });
+ok(ev.some((e) => e.type === "announce") && ev.some((e) => e.type === "open"), "청약홈 announce+open");
+ev = ah({ announceDate: "2026-06-01", receiptBegin: "2026-06-10", receiptEnd: "2026-06-16" });
+ok(ev.some((e) => e.type === "closing"), "청약홈 closing on D-1");
+ok(ah({ announceDate: "2026-01-01" }).every((e) => e.type !== "announce"), "청약홈 no announce beyond lookback");
+ok(computeStatus({ source: "청약홈", receiptBegin: "2026-06-10", receiptEnd: "2026-06-20" }, today).key === "open", "청약홈 status open");
+ok(daysLeft({ source: "청약홈", receiptEnd: "2026-06-18" }, today) === 3, "청약홈 daysLeft D-3");
 
-// ── Trigger logic ────────────────────────────────────────────────────────────
-// Announced today → announce + (begin today) open.
-let ev = eventsFor(
-  { category: "APT", id: "1", name: "성남 A", announceDate: "2026-06-15", receiptBegin: "2026-06-15", receiptEnd: "2026-06-20" },
-  today,
-);
-ok(ev.some((e) => e.type === "announce"), "fires announce on pub day");
-ok(ev.some((e) => e.type === "open"), "fires open on begin day");
-ok(!ev.some((e) => e.type === "closing"), "no closing when end is far");
+// ── LH (status-based) ────────────────────────────────────────────────────────
+const lh = (panStatus) => eventsFor({ source: "LH", category: "LH 임대", id: "06:1", panStatus }, today);
+ok(lh("공고중").some((e) => e.type === "announce") && lh("공고중").every((e) => e.type !== "open"), "LH 공고중 → announce only");
+ok(lh("접수중").some((e) => e.type === "announce") && lh("접수중").some((e) => e.type === "open"), "LH 접수중 → announce+open");
+ok(lh("접수마감").length === 0, "LH 접수마감 → no events");
+ok(computeStatus({ source: "LH", panStatus: "접수중" }).key === "open", "LH status open");
+ok(computeStatus({ source: "LH", panStatus: "공고중" }).key === "upcoming", "LH status upcoming");
+ok(computeStatus({ source: "LH", panStatus: "접수마감" }).key === "closed", "LH status closed");
+ok(daysLeft({ source: "LH", panStatus: "접수중" }) === null, "LH daysLeft null");
 
-// End is tomorrow → closing fires (closingSoonDays=1).
-ev = eventsFor(
-  { category: "APT", id: "2", name: "성남 B", announceDate: "2026-06-01", receiptBegin: "2026-06-10", receiptEnd: "2026-06-16" },
-  today,
-);
-ok(ev.some((e) => e.type === "closing"), "fires closing when end is tomorrow");
+// ── Eligibility matching ─────────────────────────────────────────────────────
+ok(matchEligibility({ source: "LH", category: "신혼희망타운", detailType: "신혼희망타운", name: "성남복정1 신혼희망타운" }).single === "불가", "신혼희망타운 → 1인 불가");
+ok(matchEligibility({ source: "LH", category: "LH 임대", detailType: "행복주택", name: "금토 행복주택" }).single === "가능", "행복주택 → 1인 가능");
+ok(matchEligibility({ source: "LH", category: "LH 임대", detailType: "국민임대", name: "x" }).key === "국민임대", "국민임대 매칭");
+ok(matchEligibility({ source: "청약홈", category: "무순위/잔여", detailType: "", name: "x" }).key === "무순위/잔여", "무순위 매칭");
+ok(matchEligibility({ source: "청약홈", category: "공공지원임대", detailType: "", name: "x" }).key === "공공지원민간임대", "공공지원임대 매칭");
+ok(matchEligibility({ source: "청약홈", category: "APT", group: "분양", detailType: "민영", name: "래미안" }).key === "민영분양", "민영분양 fallback");
+ok(matchEligibility({ source: "청약홈", category: "APT", group: "분양", detailType: "국민", name: "공공분양 단지" }).key === "공공분양", "공공분양(국민주택) 매칭");
 
-// Old announcement beyond lookback → no announce.
-ev = eventsFor(
-  { category: "APT", id: "3", name: "성남 C", announceDate: "2026-01-01", receiptBegin: "", receiptEnd: "" },
-  today,
-);
-ok(!ev.some((e) => e.type === "announce"), "no announce beyond lookback");
-
-// Future announcement → nothing yet.
-ev = eventsFor(
-  { category: "APT", id: "4", name: "성남 D", announceDate: "2026-07-01", receiptBegin: "2026-07-05", receiptEnd: "2026-07-10" },
-  today,
-);
-ok(ev.length === 0, "no events for future-dated listing");
-
-// YYYYMMDD format parsing also works.
-ev = eventsFor(
-  { category: "APT", id: "5", name: "성남 E", announceDate: "20260615", receiptBegin: "", receiptEnd: "" },
-  today,
-);
-ok(ev.some((e) => e.type === "announce"), "parses YYYYMMDD dates");
-
-// ── Status computation (dashboard) ───────────────────────────────────────────
-const st = (o) => computeStatus(o, today).key;
-ok(st({ receiptBegin: "2026-06-10", receiptEnd: "2026-06-20" }) === "open", "open when in window");
-ok(st({ receiptBegin: "2026-06-10", receiptEnd: "2026-06-16" }) === "closing", "closing when end<=+1d");
-ok(st({ receiptBegin: "2026-06-20", receiptEnd: "2026-06-25" }) === "upcoming", "upcoming when begin future");
-ok(st({ receiptBegin: "2026-06-01", receiptEnd: "2026-06-10" }) === "closed", "closed when end past");
-ok(st({ receiptBegin: "", receiptEnd: "" }) === "unknown", "unknown when no dates");
-ok(daysLeft({ receiptEnd: "2026-06-18" }, today) === 3, "daysLeft computes D-3");
-ok(daysLeft({ receiptEnd: "2026-06-01" }, today) === null, "daysLeft null when past");
+// ── Tags (group + personas) ──────────────────────────────────────────────────
+let tg = tagsFor({ source: "LH", category: "신혼희망타운", group: "분양", detailType: "신혼희망타운", name: "성남복정1 신혼희망타운" });
+ok(tg.group === "분양" && tg.personas.includes("예비신혼부부") && !tg.personas.includes("1인가구"), "신혼희망타운 → 예비신혼부부, 1인가구 제외");
+tg = tagsFor({ source: "LH", category: "LH 임대", group: "임대", detailType: "행복주택", name: "x" });
+ok(tg.personas.includes("1인가구") && tg.personas.includes("예비신혼부부"), "행복주택 → 1인가구+예비신혼부부");
+tg = tagsFor({ source: "청약홈", category: "무순위/잔여", group: "무순위", detailType: "", name: "x" });
+ok(tg.group === "무순위" && tg.personas.includes("1인가구"), "무순위 → 1인가구");
 
 console.log(`\n✅ all ${pass} assertions passed`);

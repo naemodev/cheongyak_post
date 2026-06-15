@@ -1,0 +1,51 @@
+name: 청약우체부
+
+on:
+  schedule:
+    # 5 times a day. GitHub cron is UTC; these map to KST 08, 11, 14, 17, 20.
+    - cron: "0 23,2,5,8,11 * * *"
+  workflow_dispatch: # allow manual runs (also used for the first SEED run)
+    inputs:
+      seed:
+        description: "Seed mode (record current listings without sending)"
+        type: boolean
+        default: false
+
+# Needed so the job can commit the updated state file back to the repo.
+permissions:
+  contents: write
+
+# Prevent overlapping runs from racing on the state file.
+concurrency:
+  group: cheongyak_post
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run notifier
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          SEED_MODE: ${{ inputs.seed }}
+        run: node index.js
+
+      - name: Commit updated state & dashboard snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add state/notified.json docs/data/listings.json
+          if git diff --staged --quiet; then
+            echo "no change"
+          else
+            git commit -m "chore: update state & snapshot [skip ci]"
+            git push
+          fi

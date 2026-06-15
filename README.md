@@ -1,99 +1,119 @@
-# 청약 알림 (성남 주변)
+# 청약우체부 📮
 
-성남·용인·위례·하남·광주(경기) 지역의 **청약 분양정보**를 하루 5번 자동으로 확인해서, 새로운 소식이 있으면 **텔레그램으로 알려주는** 서비스예요. 중복 알림은 보내지 않습니다.
+성남·용인·위례·하남·광주(경기) 지역의 **분양·임대 청약 공고**를 하루 5번 자동으로 확인해서, 새 소식을 **텔레그램으로 배달**해주는 서비스예요. 중복 알림은 보내지 않습니다.
 
-- **데이터 출처**: 한국부동산원 청약홈 분양정보 API (공공데이터포털, 무료)
-- **알림 시점**: 📢 모집공고 게시 / ✅ 청약접수 시작 / ⏰ 접수 마감 임박(종료 1일 전)
-- **대상 유형**: 민영·공공 APT / 무순위·잔여세대 / 공공지원 민간임대
+- **데이터 출처 (둘 다)**
+  - **청약홈**(한국부동산원): 민영·공공 APT 분양 / 무순위·잔여세대 / 공공지원 민간임대
+  - **LH**(한국토지주택공사): LH 분양주택 / 임대주택 / 신혼희망타운
+- **알림 시점**: 📢 모집공고 게시 / ✅ 청약접수 시작 / ⏰ 접수 마감 임박
 - **실행**: GitHub Actions cron (서버 불필요, 무료)
-- **대시보드**: 받은 청약을 한눈에 보는 웹 페이지 (GitHub Pages, 모바일 반응형)
+- **대시보드**: 분양/임대/무순위로 필터되는 웹 페이지 (GitHub Pages, 모바일 반응형)
+- **자격 요약**: 유형별 소득·자산·**1인 가구 가능 여부**를 알림·대시보드에 함께 표시 (참고용)
+
+> ⚠️ **LH 알림 특성**: LH 목록 API는 접수 날짜 대신 *공고상태(공고중/접수중/접수마감)* 만 줘요. 그래서 LH 건은 **공고 게시·접수 시작**은 알리지만 **"마감 임박"은 청약홈 분양에만** 적용됩니다. 자격(소득 등)은 거르지 않고 일단 다 보내드려요 — 공고문 보고 직접 판단하세요.
 
 ---
 
-## 설정 (한 번만 하면 됨)
+## 배포 순서
 
-### 1. 공공데이터 인증키 발급
+### 0. 값들 먼저 확보
 
-1. https://www.data.go.kr/data/15098547/openapi.do 접속 → 회원가입/로그인
-2. **활용신청** 버튼 클릭 → 자동승인 (개발계정)
-3. 마이페이지 → 오픈API → **일반 인증키(Decoding)** 값 복사
-   - ⚠️ Encoding이 아니라 **Decoding** 키를 사용하세요.
+1. **공공데이터 인증키 (1개로 둘 다 사용)** — https://www.data.go.kr 로그인 후, 아래 **두 데이터 모두 "활용신청"** (각각 자동승인):
+   - [청약홈 분양정보 조회 서비스 (15098547)](https://www.data.go.kr/data/15098547/openapi.do)
+   - [LH 분양임대공고문 조회 서비스 (15058530)](https://www.data.go.kr/data/15058530/openapi.do)
 
-### 2. 텔레그램 봇 만들기
+   그다음 마이페이지에서 **일반 인증키(Decoding)** 복사 (⚠️ Encoding 아님). 같은 키가 두 API에 모두 적용돼요.
+2. **텔레그램 봇 토큰** — `@BotFather` → `/newbot` (봇 `cheongyak_post_bot` 이미 생성됨)
+3. **chat_id** — 받을 곳에 따라:
+   - **나 개인**: 봇에게 아무 말이나 보낸 뒤 `https://api.telegram.org/bot<토큰>/getUpdates` → `"chat":{"id": ...}`
+   - **그룹/채널로 받기 (추천)**: 그룹(또는 채널) 만들고 **봇을 멤버/관리자로 추가** → 그 방에 메시지 한 번 보낸 뒤 같은 `getUpdates`로 확인. 채널 id는 보통 `-100…`으로 시작해요.
 
-1. 텔레그램에서 **@BotFather** 검색 → `/newbot` → 이름 정하면 **봇 토큰**을 줍니다 (`123456:ABC...` 형태).
-2. 방금 만든 내 봇을 검색해서 아무 메시지나 한 번 보냅니다 (예: `hi`).
-3. **chat_id 확인**: 브라우저에서 아래 주소를 열고 (`<토큰>` 자리에 봇 토큰 입력)
-   ```
-   https://api.telegram.org/bot<토큰>/getUpdates
-   ```
-   응답 JSON의 `"chat":{"id": ...}` 숫자가 **chat_id**입니다.
+### 1. GitHub에 올리기
 
-### 3. GitHub에 올리고 시크릿 등록
+저장소 이름 **`cheongyak_post`** (Private 권장):
 
-1. 이 `cheongyak-alert` 폴더를 새 GitHub 저장소(private 권장)에 push.
-2. 저장소 **Settings → Secrets and variables → Actions → New repository secret** 에서 3개 등록:
+```bash
+cd cheongyak_post
+git init && git add . && git commit -m "init"
+git branch -M main
+git remote add origin <저장소 git URL>
+git push -u origin main
+```
 
-   | 이름 | 값 |
-   |------|-----|
-   | `DATA_GO_KR_KEY` | 1번에서 받은 Decoding 인증키 |
-   | `TELEGRAM_BOT_TOKEN` | 2번 봇 토큰 |
-   | `TELEGRAM_CHAT_ID` | 2번 chat_id |
+(터미널이 부담되면 **GitHub Desktop**으로 폴더 추가 → Publish.)
 
-### 4. 첫 실행은 "시드 모드"로 (중요)
+### 2. 시크릿 3개 등록
 
-처음 실행하면 기존 공고가 한꺼번에 쏟아질 수 있어요. 그래서 첫 회는 **알림 없이 현재 목록만 기록**하고 넘어갑니다.
+**Settings → Secrets and variables → Actions → New repository secret**:
 
-- 저장소 **Actions 탭 → "청약 알림" → Run workflow → seed 체크 → 실행**.
-- 이후부터는 cron이 자동으로 돌며, **이때 이후의 새 공고만** 알림이 옵니다.
+| 이름 | 값 |
+|------|-----|
+| `DATA_GO_KR_KEY` | 0-1 Decoding 인증키 |
+| `TELEGRAM_BOT_TOKEN` | 0-2 봇 토큰 |
+| `TELEGRAM_CHAT_ID` | 0-3 chat_id (개인/그룹/채널) |
 
-끝! 별도 서버나 PC를 켜둘 필요 없습니다.
+### 3. 첫 실행은 "시드 모드"로 (중요)
 
----
+기존 공고 폭탄을 막기 위해 첫 회는 **알림 없이 현재 목록만 기록**합니다.
 
-### 5. 대시보드 켜기 (선택, 무료)
+- **Actions 탭 → "청약우체부" → Run workflow → seed 체크 → 실행**
+- 이후 cron이 자동으로 돌며, **이때 이후의 새 공고만** 배달됩니다.
 
-텔레그램 알림과 별개로, 받은 청약을 한눈에 보는 웹 페이지가 있어요. 알림과 **같은 데이터 소스**(매 실행마다 `docs/data/listings.json`에 저장)를 읽습니다.
+### 4. 대시보드 켜기 (선택, 무료)
 
-1. 저장소 **Settings → Pages → Source: "Deploy from a branch"** → Branch: `main`, 폴더: `/docs` → Save.
-2. 잠시 뒤 `https://<내아이디>.github.io/<저장소이름>/` 에서 열립니다.
-3. 데이터는 cron이 한 번 돈 뒤부터 채워져요. (시드 실행만 해도 목록은 채워짐)
+1. **Settings → Pages → Source: Deploy from a branch → main / `/docs` → Save**
+2. `https://<내아이디>.github.io/cheongyak_post/` 에서 열림 (cron/시드 1회 후 데이터 채워짐)
 
-대시보드 기능: 상태 배지(마감임박/접수중/예정/마감), 마감임박 우선 정렬, 유형 필터, 마감 항목은 흐리게 표시, 모바일 반응형.
+기능:
+
+- **유형 필터**(분양/임대/무순위) + **내 조건 필터**(`#1인가구` `#예비신혼부부` `#청년` `#생애최초` 등 다중 선택) — 공고마다 해시태그가 붙어 내 상황에 맞는 것만 골라봄
+- 상태 배지, 마감임박 우선 정렬, 마감 흐리게, 출처(청약홈·LH) 표시, 모바일 반응형
+- **공고별 메모** — AI로 요약한 소득·자산 등을 카드에 적어두면 저장됨. **"🤖 AI 요약 프롬프트 복사"** 버튼으로 공고 보러 갈 때 쓸 프롬프트를 바로 복사
+  - ⚠️ 메모는 **그 브라우저(기기)에만** 저장됩니다(백엔드 없음). 폰↔PC 동기화는 안 돼요.
+
+내 조건 태그 목록은 `src/eligibility.js`의 `PERSONAS`에서 추가/삭제할 수 있어요.
+
+### 5. 끝 — 이후 자동
+
+하루 5번(KST 08·11·14·17·20시) 자동 실행. PC 꺼져 있어도 됩니다.
 
 ---
 
 ## 동작 방식
 
 ```
-fetch (청약홈 API) → 지역 필터 ─┬→ 트리거 판정 → 중복 제외 → 텔레그램 발송 → 상태 저장
-                                └→ 상태 계산 → docs/data/listings.json (대시보드)
+청약홈 API (날짜기반) ┐
+                      ├→ 합치기 → 지역 필터 ─┬→ 트리거 → 중복 제외 → 텔레그램 배달 → 상태 저장
+LH API (상태기반)     ┘                      └→ 상태 계산 → docs/data/listings.json (대시보드)
 ```
 
-- 실행 시각: 매일 KST 08, 11, 14, 17, 20시 (`.github/workflows/notify.yml`의 cron)
-- 중복 방지: `(공고 + 트리거 종류)` 단위로 `state/notified.json`에 기록 → 같은 알림 재발송 안 함
-- 한 공고가 "공고 게시 → 접수 시작 → 마감 임박" 단계별로 각각 한 번씩 알림
+- 청약홈: 날짜로 공고게시/접수시작/마감임박 판정
+- LH: 공고상태로 공고게시/접수시작 판정 (마감임박 없음)
+- 중복 방지: `(출처+공고+트리거)` 단위로 `state/notified.json`에 기록
 
-## 직접 바꿀 수 있는 값 — 전부 `config.js` 한 곳에
+## 자격(소득·자산) 요약 — `src/eligibility.js`
 
-모든 설정은 `config.js`에 모여 있어요. 코드를 뒤질 필요 없습니다.
+유형별(행복주택·국민임대·통합공공임대·신혼희망타운·공공분양·민영분양 등) 일반 자격 기준과 **1인 가구 가능 여부**를 한 파일에 모아두고, 공고에 매칭해서 알림·대시보드에 같이 보여줘요.
 
-- `region.includeKeywords` — 알림 받을 지역 키워드 (지역 추가/제거)
-- `triggers.closingSoonDays` — 마감 며칠 전에 알릴지 (기본 1일)
-- `triggers.lookbackDays` — 며칠 이내 공고만 볼지 (기본 30일)
-- `endpoints` — 수집할 청약 유형
-- cron 시각은 `.github/workflows/notify.yml`에서 조정
+- ⚠️ **참고용**입니다. 소득·자산 기준값은 **해마다 바뀌므로**(현재 `BASE_YEAR = 2025`), 매년 한 번 `src/eligibility.js`만 업데이트하세요. 카드/메시지마다 "공고문 확인 필수" 문구가 붙습니다.
+- 더 정확하게 가려면 공고문 PDF를 AI로 요약하는 방식(별도 비용)으로 업그레이드할 수 있어요.
 
-## 로컬에서 테스트
+## 설정값은 전부 `config.js` 한 곳에
+
+- `region.includeKeywords` — 알림 받을 지역 키워드
+- `applyhome.endpoints` / `lh.types` — 수집할 유형 (group: 분양/임대/무순위)
+- `lh.regionCode` — LH 지역코드 (경기 = 41)
+- `triggers.closingSoonDays` / `lookbackDays` / `lhLookbackDays`
+- cron 시각은 `.github/workflows/notify.yml`
+
+## 로컬 테스트
 
 ```bash
-# 트리거/필터 로직 검증 (API·텔레그램 호출 없음)
-npm run test:mock
-
-# 실제 1회 실행 (환경변수 필요)
+npm run test:mock   # 필터/트리거/상태 로직 검증 (네트워크 호출 없음)
+# 실제 1회 실행:
 DATA_GO_KR_KEY=... TELEGRAM_BOT_TOKEN=... TELEGRAM_CHAT_ID=... npm start
 ```
 
-## ⚠️ 한 가지 확인 필요
+## ⚠️ 첫 실행 로그 확인
 
-무순위/잔여세대·공공지원 민간임대 엔드포인트의 **정확한 operation 이름**은 청약홈 API 버전에 따라 다를 수 있어요. 만약 실행 로그에 `[warn] 무순위/잔여 ... 404`처럼 뜨면, [공공데이터포털 Swagger 문서](https://www.data.go.kr/data/15098547/openapi.do)에서 실제 operation 이름을 확인해 `config.js`의 `endpoints[].op` 값만 바꿔주면 됩니다. (APT는 `getAPTLttotPblancDetail`로 확인됨.)
+`[warn] 청약홈 무순위/잔여 … 404` 또는 `[warn] LH …` 가 뜨면 해당 소스의 엔드포인트/유형 코드만 점검하면 됩니다. 청약홈 APT(`getAPTLttotPblancDetail`)와 LH(`lhLeaseNoticeInfo1`)는 확인된 값이에요. 막히면 로그를 그대로 공유해주세요.
