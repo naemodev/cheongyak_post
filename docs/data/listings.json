@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-26T10:55:40.485Z",
+  "updatedAt": "2026-06-26T13:15:02.610Z",
   "eligibilityBaseYear": 2025,
   "personas": [
     "1인가구",
@@ -13,7 +13,7 @@
     "수급자",
     "무주택"
   ],
-  "count": 8,
+  "count": 2,
   "items": [
     {
       "source": "청약홈",
@@ -39,42 +39,6 @@
       "tags": [
         "청약홈",
         "신혼희망타운",
-        "분양",
-        "예비신혼부부",
-        "신혼부부"
-      ],
-      "eligibility": {
-        "type": "신혼희망타운",
-        "single": "불가",
-        "income": "도시근로자 월평균소득 130% 이하(맞벌이 140%)",
-        "asset": "총자산 약 3.54억 이하(2025)",
-        "note": "혼인 7년 이내·예비부부·6세 이하 자녀 한부모 — 1인 단독 신청 불가"
-      }
-    },
-    {
-      "source": "LH",
-      "category": "신혼희망타운",
-      "group": "분양",
-      "detailType": "공공분양(신혼희망)",
-      "name": "e편한세상 분당 퍼스트빌리지(성남낙생 A-1BL) 신혼희망타운(공공분양) 입주자모집공고",
-      "address": "",
-      "areaName": "경기도",
-      "announceDate": "2026.05.29",
-      "receiptBegin": "",
-      "receiptEnd": "",
-      "totalHouseholds": "",
-      "url": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061094&ccrCnntSysDsCd=02&uppAisTpCd=39&aisTpCd=39&mi=1027",
-      "status": "upcoming",
-      "statusLabel": "예정",
-      "statusOrder": 2,
-      "daysLeft": null,
-      "personas": [
-        "예비신혼부부",
-        "신혼부부"
-      ],
-      "tags": [
-        "LH",
-        "공공분양",
         "분양",
         "예비신혼부부",
         "신혼부부"
@@ -120,184 +84,6 @@
         "income": "보통 소득·자산 요건 없음",
         "asset": "보통 요건 없음",
         "note": "해당 주택건설지역 무주택 세대구성원 등 — 요건 대폭 완화(공고별 확인)"
-      }
-    },
-    {
-      "source": "LH",
-      "category": "LH 임대",
-      "group": "임대",
-      "detailType": "공공임대",
-      "name": "분당하얀6단지 50년공공임대주택 예비입주자 모집(2026.05.14)",
-      "address": "",
-      "areaName": "경기도",
-      "announceDate": "2026.05.14",
-      "receiptBegin": "",
-      "receiptEnd": "",
-      "totalHouseholds": "",
-      "url": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300019938&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=08&mi=1026",
-      "status": "closed",
-      "statusLabel": "마감",
-      "statusOrder": 3,
-      "daysLeft": null,
-      "personas": [],
-      "tags": [
-        "LH",
-        "공공임대",
-        "임대"
-      ],
-      "eligibility": null
-    },
-    {
-      "source": "LH",
-      "category": "LH 임대",
-      "group": "임대",
-      "detailType": "공공임대",
-      "name": "용인김량장2단지 50년 공공임대 예비입주자 모집",
-      "address": "",
-      "areaName": "경기도",
-      "announceDate": "2026.05.14",
-      "receiptBegin": "",
-      "receiptEnd": "",
-      "totalHouseholds": "",
-      "url": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300019920&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=08&mi=1026",
-      "status": "closed",
-      "statusLabel": "마감",
-      "statusOrder": 3,
-      "daysLeft": null,
-      "personas": [],
-      "tags": [
-        "LH",
-        "공공임대",
-        "임대"
-      ],
-      "eligibility": null
-    },
-    {
-      "source": "LH",
-      "category": "LH 임대",
-      "group": "임대",
-      "detailType": "국민임대",
-      "name": "용인마평 국민임대주택 예비입주자 모집(2026.05,06)",
-      "address": "",
-      "areaName": "경기도",
-      "announceDate": "2026.05.06",
-      "receiptBegin": "",
-      "receiptEnd": "",
-      "totalHouseholds": "",
-      "url": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300019859&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-      "status": "closed",
-      "statusLabel": "마감",
-      "statusOrder": 3,
-      "daysLeft": null,
-      "personas": [
-        "1인가구",
-        "신혼부부",
-        "고령자",
-        "무주택"
-      ],
-      "tags": [
-        "LH",
-        "국민임대",
-        "임대",
-        "1인가구",
-        "신혼부부",
-        "고령자",
-        "무주택"
-      ],
-      "eligibility": {
-        "type": "국민임대",
-        "single": "가능",
-        "income": "도시근로자 월평균소득 70% 이하(1인 90%, 2인 80%)",
-        "asset": "총자산·자동차 기준 충족",
-        "note": "무주택세대구성원"
-      }
-    },
-    {
-      "source": "LH",
-      "category": "LH 임대",
-      "group": "임대",
-      "detailType": "행복주택",
-      "name": "[정정공고][경기남부권 용인시 및 이천시 행복주택 예비입주자 모집(2026.04.29.)",
-      "address": "",
-      "areaName": "경기도",
-      "announceDate": "2026.05.06",
-      "receiptBegin": "",
-      "receiptEnd": "",
-      "totalHouseholds": "",
-      "url": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300019901&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-      "status": "closed",
-      "statusLabel": "마감",
-      "statusOrder": 3,
-      "daysLeft": null,
-      "personas": [
-        "1인가구",
-        "청년",
-        "예비신혼부부",
-        "신혼부부",
-        "고령자",
-        "무주택"
-      ],
-      "tags": [
-        "LH",
-        "행복주택",
-        "임대",
-        "1인가구",
-        "청년",
-        "예비신혼부부",
-        "신혼부부",
-        "고령자",
-        "무주택"
-      ],
-      "eligibility": {
-        "type": "행복주택",
-        "single": "가능",
-        "income": "도시근로자 월평균소득 100% 이하(1인 120%, 맞벌이신혼 120%)",
-        "asset": "세대 총자산·자동차 기준 충족",
-        "note": "청년·신혼·고령 등 계층별 요건. 청년(1인) 신청 가능"
-      }
-    },
-    {
-      "source": "LH",
-      "category": "LH 임대",
-      "group": "임대",
-      "detailType": "행복주택",
-      "name": "[경기남부권 용인시 및 이천시 행복주택 예비입주자 모집(2026.04.29.)",
-      "address": "",
-      "areaName": "경기도",
-      "announceDate": "2026.04.29",
-      "receiptBegin": "",
-      "receiptEnd": "",
-      "totalHouseholds": "",
-      "url": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300019846&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-      "status": "closed",
-      "statusLabel": "마감",
-      "statusOrder": 3,
-      "daysLeft": null,
-      "personas": [
-        "1인가구",
-        "청년",
-        "예비신혼부부",
-        "신혼부부",
-        "고령자",
-        "무주택"
-      ],
-      "tags": [
-        "LH",
-        "행복주택",
-        "임대",
-        "1인가구",
-        "청년",
-        "예비신혼부부",
-        "신혼부부",
-        "고령자",
-        "무주택"
-      ],
-      "eligibility": {
-        "type": "행복주택",
-        "single": "가능",
-        "income": "도시근로자 월평균소득 100% 이하(1인 120%, 맞벌이신혼 120%)",
-        "asset": "세대 총자산·자동차 기준 충족",
-        "note": "청년·신혼·고령 등 계층별 요건. 청년(1인) 신청 가능"
       }
     }
   ]
