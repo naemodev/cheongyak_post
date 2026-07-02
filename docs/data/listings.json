@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-02T00:14:04.263Z",
+  "updatedAt": "2026-07-02T06:04:49.733Z",
   "eligibilityBaseYear": 2025,
   "personas": [
     "1인가구",
@@ -13,8 +13,44 @@
     "수급자",
     "무주택"
   ],
-  "count": 6,
+  "count": 7,
   "items": [
+    {
+      "source": "LH",
+      "category": "신혼희망타운",
+      "group": "분양",
+      "detailType": "공공분양(신혼희망)",
+      "name": "[정정공고]e편한세상 분당 퍼스트빌리지(성남낙생 A-1BL) 신혼희망타운(공공분양) 입주자모집공고",
+      "address": "",
+      "areaName": "경기도",
+      "announceDate": "2026.07.02",
+      "receiptBegin": "",
+      "receiptEnd": "",
+      "totalHouseholds": "",
+      "url": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061126&ccrCnntSysDsCd=02&uppAisTpCd=39&aisTpCd=39&mi=1027",
+      "status": "upcoming",
+      "statusLabel": "예정",
+      "statusOrder": 2,
+      "daysLeft": null,
+      "personas": [
+        "예비신혼부부",
+        "신혼부부"
+      ],
+      "tags": [
+        "LH",
+        "공공분양",
+        "분양",
+        "예비신혼부부",
+        "신혼부부"
+      ],
+      "eligibility": {
+        "type": "신혼희망타운",
+        "single": "불가",
+        "income": "도시근로자 월평균소득 130% 이하(맞벌이 140%)",
+        "asset": "총자산 약 3.54억 이하(2025)",
+        "note": "혼인 7년 이내·예비부부·6세 이하 자녀 한부모 — 1인 단독 신청 불가"
+      }
+    },
     {
       "source": "LH",
       "category": "신혼희망타운",
