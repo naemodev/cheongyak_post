@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-02T13:01:08.535Z",
+  "updatedAt": "2026-07-03T00:11:01.947Z",
   "eligibilityBaseYear": 2025,
   "personas": [
     "1인가구",
@@ -13,7 +13,7 @@
     "수급자",
     "무주택"
   ],
-  "count": 7,
+  "count": 6,
   "items": [
     {
       "source": "LH",
@@ -85,41 +85,6 @@
         "income": "도시근로자 월평균소득 130% 이하(맞벌이 140%)",
         "asset": "총자산 약 3.54억 이하(2025)",
         "note": "혼인 7년 이내·예비부부·6세 이하 자녀 한부모 — 1인 단독 신청 불가"
-      }
-    },
-    {
-      "source": "청약홈",
-      "category": "무순위/잔여",
-      "group": "무순위",
-      "detailType": "무순위",
-      "name": "경기광주역 롯데캐슬 시그니처 1단지",
-      "address": "경기도 광주시 양벌동 산54-3번지",
-      "areaName": "경기",
-      "announceDate": "2026-06-02",
-      "receiptBegin": "2026-06-08",
-      "receiptEnd": "2026-06-08",
-      "totalHouseholds": "83",
-      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTRemndrLttotPblancDetailView.do?houseManageNo=2026910130&pblancNo=2026910130",
-      "status": "closed",
-      "statusLabel": "마감",
-      "statusOrder": 3,
-      "daysLeft": null,
-      "personas": [
-        "1인가구",
-        "무주택"
-      ],
-      "tags": [
-        "청약홈",
-        "무순위",
-        "1인가구",
-        "무주택"
-      ],
-      "eligibility": {
-        "type": "무순위/잔여",
-        "single": "가능",
-        "income": "보통 소득·자산 요건 없음",
-        "asset": "보통 요건 없음",
-        "note": "해당 주택건설지역 무주택 세대구성원 등 — 요건 대폭 완화(공고별 확인)"
       }
     },
     {
