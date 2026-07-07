@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-06T12:08:45.433Z",
+  "updatedAt": "2026-07-07T00:13:42.849Z",
   "eligibilityBaseYear": 2025,
   "personas": [
     "1인가구",
@@ -13,7 +13,7 @@
     "수급자",
     "무주택"
   ],
-  "count": 10,
+  "count": 8,
   "items": [
     {
       "source": "LH",
@@ -288,90 +288,6 @@
         "임대"
       ],
       "eligibility": null
-    },
-    {
-      "source": "LH",
-      "category": "LH 임대",
-      "group": "임대",
-      "detailType": "국민임대",
-      "name": "용인마평 국민임대주택 예비입주자 모집(2026.05,06)",
-      "address": "",
-      "areaName": "경기도",
-      "announceDate": "2026.05.06",
-      "receiptBegin": "",
-      "receiptEnd": "",
-      "totalHouseholds": "",
-      "url": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300019859&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-      "status": "closed",
-      "statusLabel": "마감",
-      "statusOrder": 3,
-      "daysLeft": null,
-      "personas": [
-        "1인가구",
-        "신혼부부",
-        "고령자",
-        "무주택"
-      ],
-      "tags": [
-        "LH",
-        "국민임대",
-        "임대",
-        "1인가구",
-        "신혼부부",
-        "고령자",
-        "무주택"
-      ],
-      "eligibility": {
-        "type": "국민임대",
-        "single": "가능",
-        "income": "도시근로자 월평균소득 70% 이하(1인 90%, 2인 80%)",
-        "asset": "총자산·자동차 기준 충족",
-        "note": "무주택세대구성원"
-      }
-    },
-    {
-      "source": "LH",
-      "category": "LH 임대",
-      "group": "임대",
-      "detailType": "행복주택",
-      "name": "[정정공고][경기남부권 용인시 및 이천시 행복주택 예비입주자 모집(2026.04.29.)",
-      "address": "",
-      "areaName": "경기도",
-      "announceDate": "2026.05.06",
-      "receiptBegin": "",
-      "receiptEnd": "",
-      "totalHouseholds": "",
-      "url": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300019901&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=10&mi=1026",
-      "status": "closed",
-      "statusLabel": "마감",
-      "statusOrder": 3,
-      "daysLeft": null,
-      "personas": [
-        "1인가구",
-        "청년",
-        "예비신혼부부",
-        "신혼부부",
-        "고령자",
-        "무주택"
-      ],
-      "tags": [
-        "LH",
-        "행복주택",
-        "임대",
-        "1인가구",
-        "청년",
-        "예비신혼부부",
-        "신혼부부",
-        "고령자",
-        "무주택"
-      ],
-      "eligibility": {
-        "type": "행복주택",
-        "single": "가능",
-        "income": "도시근로자 월평균소득 100% 이하(1인 120%, 맞벌이신혼 120%)",
-        "asset": "세대 총자산·자동차 기준 충족",
-        "note": "청년·신혼·고령 등 계층별 요건. 청년(1인) 신청 가능"
-      }
     }
   ]
 }
