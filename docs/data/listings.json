@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-16T12:23:39.898Z",
+  "updatedAt": "2026-07-17T00:01:54.376Z",
   "eligibilityBaseYear": 2025,
   "personas": [
     "1인가구",
@@ -13,7 +13,7 @@
     "수급자",
     "무주택"
   ],
-  "count": 9,
+  "count": 12,
   "items": [
     {
       "source": "LH",
@@ -49,6 +49,120 @@
         "income": "도시근로자 월평균소득 130% 이하(맞벌이 140%)",
         "asset": "총자산 약 3.54억 이하(2025)",
         "note": "혼인 7년 이내·예비부부·6세 이하 자녀 한부모 — 1인 단독 신청 불가"
+      }
+    },
+    {
+      "source": "청약홈",
+      "category": "무순위/잔여",
+      "group": "무순위",
+      "detailType": "무순위",
+      "name": "호반써밋 첨단3지구(A8BL)",
+      "address": "광주연구개발특구 첨단3지구 A8블록(전남광주통합특별시 장성군 진원면)",
+      "areaName": "전남",
+      "announceDate": "2026-07-16",
+      "receiptBegin": "2026-07-21",
+      "receiptEnd": "2026-07-21",
+      "totalHouseholds": "113",
+      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTRemndrLttotPblancDetailView.do?houseManageNo=2026910190&pblancNo=2026910190",
+      "status": "upcoming",
+      "statusLabel": "예정",
+      "statusOrder": 2,
+      "daysLeft": 4,
+      "personas": [
+        "1인가구",
+        "무주택"
+      ],
+      "tags": [
+        "청약홈",
+        "무순위",
+        "1인가구",
+        "무주택"
+      ],
+      "eligibility": {
+        "type": "무순위/잔여",
+        "single": "가능",
+        "income": "보통 소득·자산 요건 없음",
+        "asset": "보통 요건 없음",
+        "note": "해당 주택건설지역 무주택 세대구성원 등 — 요건 대폭 완화(공고별 확인)"
+      }
+    },
+    {
+      "source": "청약홈",
+      "category": "무순위/잔여",
+      "group": "무순위",
+      "detailType": "무순위",
+      "name": "호반써밋 첨단3지구(A7BL)",
+      "address": "광주연구개발특구 첨단3지구 A7블록(전남광주통합특별시 북구 월출동)",
+      "areaName": "광주",
+      "announceDate": "2026-07-16",
+      "receiptBegin": "2026-07-21",
+      "receiptEnd": "2026-07-21",
+      "totalHouseholds": "154",
+      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTRemndrLttotPblancDetailView.do?houseManageNo=2026910189&pblancNo=2026910189",
+      "status": "upcoming",
+      "statusLabel": "예정",
+      "statusOrder": 2,
+      "daysLeft": 4,
+      "personas": [
+        "1인가구",
+        "무주택"
+      ],
+      "tags": [
+        "청약홈",
+        "무순위",
+        "1인가구",
+        "무주택"
+      ],
+      "eligibility": {
+        "type": "무순위/잔여",
+        "single": "가능",
+        "income": "보통 소득·자산 요건 없음",
+        "asset": "보통 요건 없음",
+        "note": "해당 주택건설지역 무주택 세대구성원 등 — 요건 대폭 완화(공고별 확인)"
+      }
+    },
+    {
+      "source": "청약홈",
+      "category": "APT",
+      "group": "분양",
+      "detailType": "APT",
+      "name": "역북 서희스타힐스 프라임시티(조합원 취소분)",
+      "address": "경기도 용인시 처인구 역북동 89-25번지 일원",
+      "areaName": "경기",
+      "announceDate": "2026-07-16",
+      "receiptBegin": "2026-07-27",
+      "receiptEnd": "2026-07-28",
+      "totalHouseholds": "5",
+      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTLttotPblancDetail.do?houseManageNo=2026000327&pblancNo=2026000327",
+      "status": "upcoming",
+      "statusLabel": "예정",
+      "statusOrder": 2,
+      "daysLeft": 11,
+      "personas": [
+        "1인가구",
+        "예비신혼부부",
+        "신혼부부",
+        "생애최초",
+        "다자녀",
+        "노부모부양"
+      ],
+      "tags": [
+        "청약홈",
+        "APT",
+        "분양",
+        "1인가구",
+        "예비신혼부부",
+        "신혼부부",
+        "생애최초",
+        "다자녀",
+        "노부모부양"
+      ],
+      "eligibility": {
+        "type": "민영분양",
+        "single": "가능",
+        "income": "일반공급은 보통 소득·자산 요건 없음(추첨·가점)",
+        "asset": "일반공급 요건 없음",
+        "note": "청약통장+무주택/세대주 등. 특별공급은 유형별 소득요건 별도"
       }
     },
     {
