@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-21T12:25:06.515Z",
+  "updatedAt": "2026-07-21T23:58:39.036Z",
   "eligibilityBaseYear": 2025,
   "personas": [
     "1인가구",
@@ -15,76 +15,6 @@
   ],
   "count": 13,
   "items": [
-    {
-      "source": "청약홈",
-      "category": "무순위/잔여",
-      "group": "무순위",
-      "detailType": "무순위",
-      "name": "호반써밋 첨단3지구(A8BL)",
-      "address": "광주연구개발특구 첨단3지구 A8블록(전남광주통합특별시 장성군 진원면)",
-      "areaName": "전남",
-      "announceDate": "2026-07-16",
-      "receiptBegin": "2026-07-21",
-      "receiptEnd": "2026-07-21",
-      "totalHouseholds": "113",
-      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTRemndrLttotPblancDetailView.do?houseManageNo=2026910190&pblancNo=2026910190",
-      "status": "closing",
-      "statusLabel": "마감임박",
-      "statusOrder": 0,
-      "daysLeft": 0,
-      "personas": [
-        "1인가구",
-        "무주택"
-      ],
-      "tags": [
-        "청약홈",
-        "무순위",
-        "1인가구",
-        "무주택"
-      ],
-      "eligibility": {
-        "type": "무순위/잔여",
-        "single": "가능",
-        "income": "보통 소득·자산 요건 없음",
-        "asset": "보통 요건 없음",
-        "note": "해당 주택건설지역 무주택 세대구성원 등 — 요건 대폭 완화(공고별 확인)"
-      }
-    },
-    {
-      "source": "청약홈",
-      "category": "무순위/잔여",
-      "group": "무순위",
-      "detailType": "무순위",
-      "name": "호반써밋 첨단3지구(A7BL)",
-      "address": "광주연구개발특구 첨단3지구 A7블록(전남광주통합특별시 북구 월출동)",
-      "areaName": "광주",
-      "announceDate": "2026-07-16",
-      "receiptBegin": "2026-07-21",
-      "receiptEnd": "2026-07-21",
-      "totalHouseholds": "154",
-      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTRemndrLttotPblancDetailView.do?houseManageNo=2026910189&pblancNo=2026910189",
-      "status": "closing",
-      "statusLabel": "마감임박",
-      "statusOrder": 0,
-      "daysLeft": 0,
-      "personas": [
-        "1인가구",
-        "무주택"
-      ],
-      "tags": [
-        "청약홈",
-        "무순위",
-        "1인가구",
-        "무주택"
-      ],
-      "eligibility": {
-        "type": "무순위/잔여",
-        "single": "가능",
-        "income": "보통 소득·자산 요건 없음",
-        "asset": "보통 요건 없음",
-        "note": "해당 주택건설지역 무주택 세대구성원 등 — 요건 대폭 완화(공고별 확인)"
-      }
-    },
     {
       "source": "LH",
       "category": "LH 임대",
@@ -141,7 +71,7 @@
       "status": "upcoming",
       "statusLabel": "예정",
       "statusOrder": 2,
-      "daysLeft": 7,
+      "daysLeft": 6,
       "personas": [
         "1인가구",
         "예비신혼부부",
@@ -391,6 +321,76 @@
         "income": "도시근로자 월평균소득 70% 이하(1인 90%, 2인 80%)",
         "asset": "총자산·자동차 기준 충족",
         "note": "무주택세대구성원"
+      }
+    },
+    {
+      "source": "청약홈",
+      "category": "무순위/잔여",
+      "group": "무순위",
+      "detailType": "무순위",
+      "name": "호반써밋 첨단3지구(A8BL)",
+      "address": "광주연구개발특구 첨단3지구 A8블록(전남광주통합특별시 장성군 진원면)",
+      "areaName": "전남",
+      "announceDate": "2026-07-16",
+      "receiptBegin": "2026-07-21",
+      "receiptEnd": "2026-07-21",
+      "totalHouseholds": "113",
+      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTRemndrLttotPblancDetailView.do?houseManageNo=2026910190&pblancNo=2026910190",
+      "status": "closed",
+      "statusLabel": "마감",
+      "statusOrder": 3,
+      "daysLeft": null,
+      "personas": [
+        "1인가구",
+        "무주택"
+      ],
+      "tags": [
+        "청약홈",
+        "무순위",
+        "1인가구",
+        "무주택"
+      ],
+      "eligibility": {
+        "type": "무순위/잔여",
+        "single": "가능",
+        "income": "보통 소득·자산 요건 없음",
+        "asset": "보통 요건 없음",
+        "note": "해당 주택건설지역 무주택 세대구성원 등 — 요건 대폭 완화(공고별 확인)"
+      }
+    },
+    {
+      "source": "청약홈",
+      "category": "무순위/잔여",
+      "group": "무순위",
+      "detailType": "무순위",
+      "name": "호반써밋 첨단3지구(A7BL)",
+      "address": "광주연구개발특구 첨단3지구 A7블록(전남광주통합특별시 북구 월출동)",
+      "areaName": "광주",
+      "announceDate": "2026-07-16",
+      "receiptBegin": "2026-07-21",
+      "receiptEnd": "2026-07-21",
+      "totalHouseholds": "154",
+      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTRemndrLttotPblancDetailView.do?houseManageNo=2026910189&pblancNo=2026910189",
+      "status": "closed",
+      "statusLabel": "마감",
+      "statusOrder": 3,
+      "daysLeft": null,
+      "personas": [
+        "1인가구",
+        "무주택"
+      ],
+      "tags": [
+        "청약홈",
+        "무순위",
+        "1인가구",
+        "무주택"
+      ],
+      "eligibility": {
+        "type": "무순위/잔여",
+        "single": "가능",
+        "income": "보통 소득·자산 요건 없음",
+        "asset": "보통 요건 없음",
+        "note": "해당 주택건설지역 무주택 세대구성원 등 — 요건 대폭 완화(공고별 확인)"
       }
     },
     {
