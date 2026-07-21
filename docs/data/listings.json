@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-21T05:25:41.318Z",
+  "updatedAt": "2026-07-21T10:28:18.764Z",
   "eligibilityBaseYear": 2025,
   "personas": [
     "1인가구",
@@ -123,82 +123,6 @@
         "income": "도시근로자 월평균소득 70% 이하(1인 90%, 2인 80%)",
         "asset": "총자산·자동차 기준 충족",
         "note": "무주택세대구성원"
-      }
-    },
-    {
-      "source": "LH",
-      "category": "LH 임대",
-      "group": "임대",
-      "detailType": "국민임대",
-      "name": "용인시 용인구갈8 국민임대 예비입주자 모집공고(2026.07.06.)",
-      "address": "",
-      "areaName": "경기도",
-      "announceDate": "2026.07.06",
-      "receiptBegin": "",
-      "receiptEnd": "",
-      "totalHouseholds": "",
-      "url": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020265&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-      "status": "open",
-      "statusLabel": "접수중",
-      "statusOrder": 1,
-      "daysLeft": null,
-      "personas": [
-        "1인가구",
-        "신혼부부",
-        "고령자",
-        "무주택"
-      ],
-      "tags": [
-        "LH",
-        "국민임대",
-        "임대",
-        "1인가구",
-        "신혼부부",
-        "고령자",
-        "무주택"
-      ],
-      "eligibility": {
-        "type": "국민임대",
-        "single": "가능",
-        "income": "도시근로자 월평균소득 70% 이하(1인 90%, 2인 80%)",
-        "asset": "총자산·자동차 기준 충족",
-        "note": "무주택세대구성원"
-      }
-    },
-    {
-      "source": "LH",
-      "category": "신혼희망타운",
-      "group": "분양",
-      "detailType": "공공분양(신혼희망)",
-      "name": "[정정공고]e편한세상 분당 퍼스트빌리지(성남낙생 A-1BL) 신혼희망타운(공공분양) 입주자모집공고",
-      "address": "",
-      "areaName": "경기도",
-      "announceDate": "2026.07.02",
-      "receiptBegin": "",
-      "receiptEnd": "",
-      "totalHouseholds": "",
-      "url": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061126&ccrCnntSysDsCd=02&uppAisTpCd=39&aisTpCd=39&mi=1027",
-      "status": "open",
-      "statusLabel": "접수중",
-      "statusOrder": 1,
-      "daysLeft": null,
-      "personas": [
-        "예비신혼부부",
-        "신혼부부"
-      ],
-      "tags": [
-        "LH",
-        "공공분양",
-        "분양",
-        "예비신혼부부",
-        "신혼부부"
-      ],
-      "eligibility": {
-        "type": "신혼희망타운",
-        "single": "불가",
-        "income": "도시근로자 월평균소득 130% 이하(맞벌이 140%)",
-        "asset": "총자산 약 3.54억 이하(2025)",
-        "note": "혼인 7년 이내·예비부부·6세 이하 자녀 한부모 — 1인 단독 신청 불가"
       }
     },
     {
@@ -471,6 +395,82 @@
     },
     {
       "source": "LH",
+      "category": "LH 임대",
+      "group": "임대",
+      "detailType": "국민임대",
+      "name": "용인시 용인구갈8 국민임대 예비입주자 모집공고(2026.07.06.)",
+      "address": "",
+      "areaName": "경기도",
+      "announceDate": "2026.07.06",
+      "receiptBegin": "",
+      "receiptEnd": "",
+      "totalHouseholds": "",
+      "url": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020265&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
+      "status": "closed",
+      "statusLabel": "마감",
+      "statusOrder": 3,
+      "daysLeft": null,
+      "personas": [
+        "1인가구",
+        "신혼부부",
+        "고령자",
+        "무주택"
+      ],
+      "tags": [
+        "LH",
+        "국민임대",
+        "임대",
+        "1인가구",
+        "신혼부부",
+        "고령자",
+        "무주택"
+      ],
+      "eligibility": {
+        "type": "국민임대",
+        "single": "가능",
+        "income": "도시근로자 월평균소득 70% 이하(1인 90%, 2인 80%)",
+        "asset": "총자산·자동차 기준 충족",
+        "note": "무주택세대구성원"
+      }
+    },
+    {
+      "source": "LH",
+      "category": "신혼희망타운",
+      "group": "분양",
+      "detailType": "공공분양(신혼희망)",
+      "name": "[정정공고]e편한세상 분당 퍼스트빌리지(성남낙생 A-1BL) 신혼희망타운(공공분양) 입주자모집공고",
+      "address": "",
+      "areaName": "경기도",
+      "announceDate": "2026.07.02",
+      "receiptBegin": "",
+      "receiptEnd": "",
+      "totalHouseholds": "",
+      "url": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061126&ccrCnntSysDsCd=02&uppAisTpCd=39&aisTpCd=39&mi=1027",
+      "status": "closed",
+      "statusLabel": "마감",
+      "statusOrder": 3,
+      "daysLeft": null,
+      "personas": [
+        "예비신혼부부",
+        "신혼부부"
+      ],
+      "tags": [
+        "LH",
+        "공공분양",
+        "분양",
+        "예비신혼부부",
+        "신혼부부"
+      ],
+      "eligibility": {
+        "type": "신혼희망타운",
+        "single": "불가",
+        "income": "도시근로자 월평균소득 130% 이하(맞벌이 140%)",
+        "asset": "총자산 약 3.54억 이하(2025)",
+        "note": "혼인 7년 이내·예비부부·6세 이하 자녀 한부모 — 1인 단독 신청 불가"
+      }
+    },
+    {
+      "source": "LH",
       "category": "신혼희망타운",
       "group": "분양",
       "detailType": "공공분양(신혼희망)",
@@ -482,9 +482,9 @@
       "receiptEnd": "",
       "totalHouseholds": "",
       "url": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=0000061094&ccrCnntSysDsCd=02&uppAisTpCd=39&aisTpCd=39&mi=1027",
-      "status": "upcoming",
-      "statusLabel": "예정",
-      "statusOrder": 2,
+      "status": "closed",
+      "statusLabel": "마감",
+      "statusOrder": 3,
       "daysLeft": null,
       "personas": [
         "예비신혼부부",
