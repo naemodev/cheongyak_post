@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-22T12:27:43.709Z",
+  "updatedAt": "2026-07-23T00:04:12.503Z",
   "eligibilityBaseYear": 2025,
   "personas": [
     "1인가구",
@@ -13,8 +13,43 @@
     "수급자",
     "무주택"
   ],
-  "count": 13,
+  "count": 14,
   "items": [
+    {
+      "source": "청약홈",
+      "category": "무순위/잔여",
+      "group": "무순위",
+      "detailType": "무순위",
+      "name": "판교TH212",
+      "address": "경기도 성남시 분당구 대장동 B2, B3BL",
+      "areaName": "경기",
+      "announceDate": "2026-07-22",
+      "receiptBegin": "2026-07-27",
+      "receiptEnd": "2026-07-27",
+      "totalHouseholds": "1",
+      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTRemndrLttotPblancDetailView.do?houseManageNo=2026910198&pblancNo=2026910198",
+      "status": "upcoming",
+      "statusLabel": "예정",
+      "statusOrder": 2,
+      "daysLeft": 4,
+      "personas": [
+        "1인가구",
+        "무주택"
+      ],
+      "tags": [
+        "청약홈",
+        "무순위",
+        "1인가구",
+        "무주택"
+      ],
+      "eligibility": {
+        "type": "무순위/잔여",
+        "single": "가능",
+        "income": "보통 소득·자산 요건 없음",
+        "asset": "보통 요건 없음",
+        "note": "해당 주택건설지역 무주택 세대구성원 등 — 요건 대폭 완화(공고별 확인)"
+      }
+    },
     {
       "source": "청약홈",
       "category": "APT",
@@ -31,7 +66,7 @@
       "status": "upcoming",
       "statusLabel": "예정",
       "statusOrder": 2,
-      "daysLeft": 6,
+      "daysLeft": 5,
       "personas": [
         "1인가구",
         "예비신혼부부",
