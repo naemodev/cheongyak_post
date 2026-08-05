@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-04T13:08:46.254Z",
+  "updatedAt": "2026-08-05T00:12:22.717Z",
   "eligibilityBaseYear": 2025,
   "personas": [
     "1인가구",
@@ -28,10 +28,10 @@
       "receiptEnd": "2026-08-04",
       "totalHouseholds": "142",
       "url": "https://www.applyhome.co.kr/ai/aia/selectAPTLttotPblancDetail.do?houseManageNo=2026820007&pblancNo=2026820007",
-      "status": "closing",
-      "statusLabel": "마감임박",
-      "statusOrder": 0,
-      "daysLeft": 0,
+      "status": "closed",
+      "statusLabel": "마감",
+      "statusOrder": 3,
+      "daysLeft": null,
       "personas": [
         "예비신혼부부",
         "신혼부부"
