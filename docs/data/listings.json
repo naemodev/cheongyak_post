@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-23T23:25:07.938Z",
+  "updatedAt": "2026-08-24T03:07:58.936Z",
   "eligibilityBaseYear": 2025,
   "personas": [
     "1인가구",
@@ -15,6 +15,42 @@
   ],
   "count": 15,
   "items": [
+    {
+      "source": "LH",
+      "category": "신혼희망타운",
+      "group": "분양",
+      "detailType": "행복주택(신혼희망)",
+      "name": "성남금토 A-4블록 신혼희망타운 행복주택 입주자 모집공고",
+      "address": "",
+      "areaName": "경기도",
+      "announceDate": "2026.08.11",
+      "receiptBegin": "",
+      "receiptEnd": "",
+      "totalHouseholds": "",
+      "url": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020534&ccrCnntSysDsCd=03&uppAisTpCd=39&aisTpCd=42&mi=1026",
+      "status": "open",
+      "statusLabel": "접수중",
+      "statusOrder": 1,
+      "daysLeft": null,
+      "personas": [
+        "예비신혼부부",
+        "신혼부부"
+      ],
+      "tags": [
+        "LH",
+        "행복주택",
+        "분양",
+        "예비신혼부부",
+        "신혼부부"
+      ],
+      "eligibility": {
+        "type": "신혼희망타운",
+        "single": "불가",
+        "income": "도시근로자 월평균소득 130% 이하(맞벌이 140%)",
+        "asset": "총자산 약 3.54억 이하(2025)",
+        "note": "혼인 7년 이내·예비부부·6세 이하 자녀 한부모 — 1인 단독 신청 불가"
+      }
+    },
     {
       "source": "청약홈",
       "category": "APT",
@@ -83,42 +119,6 @@
       "tags": [
         "청약홈",
         "신혼희망타운",
-        "분양",
-        "예비신혼부부",
-        "신혼부부"
-      ],
-      "eligibility": {
-        "type": "신혼희망타운",
-        "single": "불가",
-        "income": "도시근로자 월평균소득 130% 이하(맞벌이 140%)",
-        "asset": "총자산 약 3.54억 이하(2025)",
-        "note": "혼인 7년 이내·예비부부·6세 이하 자녀 한부모 — 1인 단독 신청 불가"
-      }
-    },
-    {
-      "source": "LH",
-      "category": "신혼희망타운",
-      "group": "분양",
-      "detailType": "행복주택(신혼희망)",
-      "name": "성남금토 A-4블록 신혼희망타운 행복주택 입주자 모집공고",
-      "address": "",
-      "areaName": "경기도",
-      "announceDate": "2026.08.11",
-      "receiptBegin": "",
-      "receiptEnd": "",
-      "totalHouseholds": "",
-      "url": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020534&ccrCnntSysDsCd=03&uppAisTpCd=39&aisTpCd=42&mi=1026",
-      "status": "upcoming",
-      "statusLabel": "예정",
-      "statusOrder": 2,
-      "daysLeft": null,
-      "personas": [
-        "예비신혼부부",
-        "신혼부부"
-      ],
-      "tags": [
-        "LH",
-        "행복주택",
         "분양",
         "예비신혼부부",
         "신혼부부"
