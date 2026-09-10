@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-09T12:50:23.097Z",
+  "updatedAt": "2026-09-10T00:55:47.594Z",
   "eligibilityBaseYear": 2025,
   "personas": [
     "1인가구",
@@ -13,8 +13,43 @@
     "수급자",
     "무주택"
   ],
-  "count": 9,
+  "count": 7,
   "items": [
+    {
+      "source": "청약홈",
+      "category": "무순위/잔여",
+      "group": "무순위",
+      "detailType": "무순위",
+      "name": "역북 서희스타힐스 프라임시티(조합원 취소분)",
+      "address": "경기도 용인시 처인구 역북동 89-25번지 일원",
+      "areaName": "경기",
+      "announceDate": "2026-09-09",
+      "receiptBegin": "2026-09-14",
+      "receiptEnd": "2026-09-14",
+      "totalHouseholds": "4",
+      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTRemndrLttotPblancDetailView.do?houseManageNo=2026910232&pblancNo=2026910232",
+      "status": "upcoming",
+      "statusLabel": "예정",
+      "statusOrder": 2,
+      "daysLeft": 4,
+      "personas": [
+        "1인가구",
+        "무주택"
+      ],
+      "tags": [
+        "청약홈",
+        "무순위",
+        "1인가구",
+        "무주택"
+      ],
+      "eligibility": {
+        "type": "무순위/잔여",
+        "single": "가능",
+        "income": "보통 소득·자산 요건 없음",
+        "asset": "보통 요건 없음",
+        "note": "해당 주택건설지역 무주택 세대구성원 등 — 요건 대폭 완화(공고별 확인)"
+      }
+    },
     {
       "source": "청약홈",
       "category": "APT",
@@ -31,7 +66,7 @@
       "status": "upcoming",
       "statusLabel": "예정",
       "statusOrder": 2,
-      "daysLeft": 7,
+      "daysLeft": 6,
       "personas": [
         "1인가구",
         "예비신혼부부",
@@ -104,78 +139,6 @@
       }
     },
     {
-      "source": "청약홈",
-      "category": "APT",
-      "group": "분양",
-      "detailType": "신혼희망타운",
-      "name": "성남복정2 A1블록 신혼희망타운(공공분양)(본청약)",
-      "address": "경기도 성남시 수정구 신흥동 81-8",
-      "areaName": "경기",
-      "announceDate": "2026-08-10",
-      "receiptBegin": "2026-08-31",
-      "receiptEnd": "2026-09-08",
-      "totalHouseholds": "594",
-      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTLttotPblancDetail.do?houseManageNo=2026820008&pblancNo=2026820008",
-      "status": "closed",
-      "statusLabel": "마감",
-      "statusOrder": 3,
-      "daysLeft": null,
-      "personas": [
-        "예비신혼부부",
-        "신혼부부"
-      ],
-      "tags": [
-        "청약홈",
-        "신혼희망타운",
-        "분양",
-        "예비신혼부부",
-        "신혼부부"
-      ],
-      "eligibility": {
-        "type": "신혼희망타운",
-        "single": "불가",
-        "income": "도시근로자 월평균소득 130% 이하(맞벌이 140%)",
-        "asset": "총자산 약 3.54억 이하(2025)",
-        "note": "혼인 7년 이내·예비부부·6세 이하 자녀 한부모 — 1인 단독 신청 불가"
-      }
-    },
-    {
-      "source": "청약홈",
-      "category": "무순위/잔여",
-      "group": "무순위",
-      "detailType": "불법행위 재공급",
-      "name": "힐스테이트 초월역 2BL",
-      "address": "경기도 광주시 초월읍 도곡길 27(쌍동리 402)",
-      "areaName": "경기",
-      "announceDate": "2026-08-10",
-      "receiptBegin": "2026-08-18",
-      "receiptEnd": "2026-08-18",
-      "totalHouseholds": "1",
-      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTRemndrLttotPblancDetailView.do?houseManageNo=2026930026&pblancNo=2026930026",
-      "status": "closed",
-      "statusLabel": "마감",
-      "statusOrder": 3,
-      "daysLeft": null,
-      "personas": [
-        "1인가구",
-        "무주택"
-      ],
-      "tags": [
-        "청약홈",
-        "불법행위재공급",
-        "무순위",
-        "1인가구",
-        "무주택"
-      ],
-      "eligibility": {
-        "type": "무순위/잔여",
-        "single": "가능",
-        "income": "보통 소득·자산 요건 없음",
-        "asset": "보통 요건 없음",
-        "note": "해당 주택건설지역 무주택 세대구성원 등 — 요건 대폭 완화(공고별 확인)"
-      }
-    },
-    {
       "source": "LH",
       "category": "LH 임대",
       "group": "임대",
@@ -245,46 +208,6 @@
         "income": "생계·의료급여 수급자 등 (계층별)",
         "asset": "자산 기준 별도",
         "note": "기초수급자·차상위 등 사회취약계층 대상 — 자격 제한적"
-      }
-    },
-    {
-      "source": "LH",
-      "category": "LH 임대",
-      "group": "임대",
-      "detailType": "국민임대",
-      "name": "[정정공고]성남금토 A-2블록 국민임대주택 입주자 모집공고",
-      "address": "",
-      "areaName": "경기도",
-      "announceDate": "2026.07.09",
-      "receiptBegin": "",
-      "receiptEnd": "",
-      "totalHouseholds": "",
-      "url": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020360&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=07&mi=1026",
-      "status": "closed",
-      "statusLabel": "마감",
-      "statusOrder": 3,
-      "daysLeft": null,
-      "personas": [
-        "1인가구",
-        "신혼부부",
-        "고령자",
-        "무주택"
-      ],
-      "tags": [
-        "LH",
-        "국민임대",
-        "임대",
-        "1인가구",
-        "신혼부부",
-        "고령자",
-        "무주택"
-      ],
-      "eligibility": {
-        "type": "국민임대",
-        "single": "가능",
-        "income": "도시근로자 월평균소득 70% 이하(1인 90%, 2인 80%)",
-        "asset": "총자산·자동차 기준 충족",
-        "note": "무주택세대구성원"
       }
     },
     {
