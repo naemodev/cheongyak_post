@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-11T12:42:51.662Z",
+  "updatedAt": "2026-09-12T00:58:19.867Z",
   "eligibilityBaseYear": 2025,
   "personas": [
     "1인가구",
@@ -13,7 +13,7 @@
     "수급자",
     "무주택"
   ],
-  "count": 6,
+  "count": 7,
   "items": [
     {
       "source": "청약홈",
@@ -31,7 +31,7 @@
       "status": "upcoming",
       "statusLabel": "예정",
       "statusOrder": 2,
-      "daysLeft": 3,
+      "daysLeft": 2,
       "personas": [
         "1인가구",
         "무주택"
@@ -66,7 +66,51 @@
       "status": "upcoming",
       "statusLabel": "예정",
       "statusOrder": 2,
-      "daysLeft": 5,
+      "daysLeft": 4,
+      "personas": [
+        "1인가구",
+        "예비신혼부부",
+        "신혼부부",
+        "생애최초",
+        "다자녀",
+        "노부모부양"
+      ],
+      "tags": [
+        "청약홈",
+        "APT",
+        "분양",
+        "1인가구",
+        "예비신혼부부",
+        "신혼부부",
+        "생애최초",
+        "다자녀",
+        "노부모부양"
+      ],
+      "eligibility": {
+        "type": "민영분양",
+        "single": "가능",
+        "income": "일반공급은 보통 소득·자산 요건 없음(추첨·가점)",
+        "asset": "일반공급 요건 없음",
+        "note": "청약통장+무주택/세대주 등. 특별공급은 유형별 소득요건 별도"
+      }
+    },
+    {
+      "source": "청약홈",
+      "category": "APT",
+      "group": "분양",
+      "detailType": "APT",
+      "name": "더샵 분당하이스트",
+      "address": "경기도 성남시 분당구 정자동 90번지",
+      "areaName": "경기",
+      "announceDate": "2026-09-11",
+      "receiptBegin": "2026-09-22",
+      "receiptEnd": "2026-09-28",
+      "totalHouseholds": "143",
+      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTLttotPblancDetail.do?houseManageNo=2026000103&pblancNo=2026000103",
+      "status": "upcoming",
+      "statusLabel": "예정",
+      "statusOrder": 2,
+      "daysLeft": 16,
       "personas": [
         "1인가구",
         "예비신혼부부",
