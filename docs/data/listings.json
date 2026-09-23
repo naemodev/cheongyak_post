@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-22T13:15:10.106Z",
+  "updatedAt": "2026-09-23T01:20:37.618Z",
   "eligibilityBaseYear": 2025,
   "personas": [
     "1인가구",
@@ -13,7 +13,7 @@
     "수급자",
     "무주택"
   ],
-  "count": 6,
+  "count": 7,
   "items": [
     {
       "source": "청약홈",
@@ -31,7 +31,7 @@
       "status": "open",
       "statusLabel": "접수중",
       "statusOrder": 1,
-      "daysLeft": 6,
+      "daysLeft": 5,
       "personas": [
         "1인가구",
         "예비신혼부부",
@@ -57,6 +57,41 @@
         "income": "일반공급은 보통 소득·자산 요건 없음(추첨·가점)",
         "asset": "일반공급 요건 없음",
         "note": "청약통장+무주택/세대주 등. 특별공급은 유형별 소득요건 별도"
+      }
+    },
+    {
+      "source": "청약홈",
+      "category": "무순위/잔여",
+      "group": "무순위",
+      "detailType": "무순위",
+      "name": "제일풍경채 첨단3지구(A6BL)",
+      "address": "광주연구개발특구 첨단3지구 A6블록(전남광주통합특별시 북구 월출동)",
+      "areaName": "광주",
+      "announceDate": "2026-09-22",
+      "receiptBegin": "2026-09-28",
+      "receiptEnd": "2026-09-28",
+      "totalHouseholds": "187",
+      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTRemndrLttotPblancDetailView.do?houseManageNo=2026910248&pblancNo=2026910248",
+      "status": "upcoming",
+      "statusLabel": "예정",
+      "statusOrder": 2,
+      "daysLeft": 5,
+      "personas": [
+        "1인가구",
+        "무주택"
+      ],
+      "tags": [
+        "청약홈",
+        "무순위",
+        "1인가구",
+        "무주택"
+      ],
+      "eligibility": {
+        "type": "무순위/잔여",
+        "single": "가능",
+        "income": "보통 소득·자산 요건 없음",
+        "asset": "보통 요건 없음",
+        "note": "해당 주택건설지역 무주택 세대구성원 등 — 요건 대폭 완화(공고별 확인)"
       }
     },
     {
