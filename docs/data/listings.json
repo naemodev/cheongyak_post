@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-23T13:29:47.673Z",
+  "updatedAt": "2026-09-24T01:15:08.026Z",
   "eligibilityBaseYear": 2025,
   "personas": [
     "1인가구",
@@ -31,7 +31,7 @@
       "status": "open",
       "statusLabel": "접수중",
       "statusOrder": 1,
-      "daysLeft": 5,
+      "daysLeft": 4,
       "personas": [
         "1인가구",
         "예비신혼부부",
@@ -75,7 +75,7 @@
       "status": "upcoming",
       "statusLabel": "예정",
       "statusOrder": 2,
-      "daysLeft": 5,
+      "daysLeft": 4,
       "personas": [
         "1인가구",
         "무주택"
