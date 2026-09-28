@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-28T01:28:40.038Z",
+  "updatedAt": "2026-09-28T08:28:22.338Z",
   "eligibilityBaseYear": 2025,
   "personas": [
     "1인가구",
@@ -13,7 +13,7 @@
     "수급자",
     "무주택"
   ],
-  "count": 7,
+  "count": 8,
   "items": [
     {
       "source": "청약홈",
@@ -93,6 +93,31 @@
         "asset": "보통 요건 없음",
         "note": "해당 주택건설지역 무주택 세대구성원 등 — 요건 대폭 완화(공고별 확인)"
       }
+    },
+    {
+      "source": "LH",
+      "category": "LH 임대",
+      "group": "임대",
+      "detailType": "가정어린이집",
+      "name": "성남신촌 A1블록 가정어린이집 운영예정자 모집공고",
+      "address": "",
+      "areaName": "경기도",
+      "announceDate": "2026.09.28",
+      "receiptBegin": "",
+      "receiptEnd": "",
+      "totalHouseholds": "",
+      "url": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020812&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=40&mi=1026",
+      "status": "upcoming",
+      "statusLabel": "예정",
+      "statusOrder": 2,
+      "daysLeft": null,
+      "personas": [],
+      "tags": [
+        "LH",
+        "가정어린이집",
+        "임대"
+      ],
+      "eligibility": null
     },
     {
       "source": "청약홈",
