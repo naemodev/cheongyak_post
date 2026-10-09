@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T11:52:07.796Z",
+  "updatedAt": "2026-10-09T02:51:18.163Z",
   "eligibilityBaseYear": 2025,
   "personas": [
     "1인가구",
@@ -13,7 +13,7 @@
     "수급자",
     "무주택"
   ],
-  "count": 9,
+  "count": 11,
   "items": [
     {
       "source": "청약홈",
@@ -31,7 +31,95 @@
       "status": "upcoming",
       "statusLabel": "예정",
       "statusOrder": 2,
+      "daysLeft": 5,
+      "personas": [
+        "1인가구",
+        "예비신혼부부",
+        "신혼부부",
+        "생애최초",
+        "다자녀",
+        "노부모부양"
+      ],
+      "tags": [
+        "청약홈",
+        "APT",
+        "분양",
+        "1인가구",
+        "예비신혼부부",
+        "신혼부부",
+        "생애최초",
+        "다자녀",
+        "노부모부양"
+      ],
+      "eligibility": {
+        "type": "민영분양",
+        "single": "가능",
+        "income": "일반공급은 보통 소득·자산 요건 없음(추첨·가점)",
+        "asset": "일반공급 요건 없음",
+        "note": "청약통장+무주택/세대주 등. 특별공급은 유형별 소득요건 별도"
+      }
+    },
+    {
+      "source": "청약홈",
+      "category": "APT",
+      "group": "분양",
+      "detailType": "APT",
+      "name": "진도 승원팰리체 더 테라스",
+      "address": "전남광주통합특별시 진도군 진도읍 교동리 618번지 일원",
+      "areaName": "전남",
+      "announceDate": "2026-10-08",
+      "receiptBegin": "2026-10-14",
+      "receiptEnd": "2026-10-15",
+      "totalHouseholds": "58",
+      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTLttotPblancDetail.do?houseManageNo=2026000466&pblancNo=2026000466",
+      "status": "upcoming",
+      "statusLabel": "예정",
+      "statusOrder": 2,
       "daysLeft": 6,
+      "personas": [
+        "1인가구",
+        "예비신혼부부",
+        "신혼부부",
+        "생애최초",
+        "다자녀",
+        "노부모부양"
+      ],
+      "tags": [
+        "청약홈",
+        "APT",
+        "분양",
+        "1인가구",
+        "예비신혼부부",
+        "신혼부부",
+        "생애최초",
+        "다자녀",
+        "노부모부양"
+      ],
+      "eligibility": {
+        "type": "민영분양",
+        "single": "가능",
+        "income": "일반공급은 보통 소득·자산 요건 없음(추첨·가점)",
+        "asset": "일반공급 요건 없음",
+        "note": "청약통장+무주택/세대주 등. 특별공급은 유형별 소득요건 별도"
+      }
+    },
+    {
+      "source": "청약홈",
+      "category": "APT",
+      "group": "분양",
+      "detailType": "APT",
+      "name": "한양립스 에듀포레(조합원 취소분)",
+      "address": "전남광주통합특별시 광산구 하산동 269번지 일원",
+      "areaName": "광주",
+      "announceDate": "2026-10-08",
+      "receiptBegin": "2026-10-19",
+      "receiptEnd": "2026-10-20",
+      "totalHouseholds": "19",
+      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTLttotPblancDetail.do?houseManageNo=2026000471&pblancNo=2026000471",
+      "status": "upcoming",
+      "statusLabel": "예정",
+      "statusOrder": 2,
+      "daysLeft": 11,
       "personas": [
         "1인가구",
         "예비신혼부부",
