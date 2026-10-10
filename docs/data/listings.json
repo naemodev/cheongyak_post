@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-09T11:43:59.555Z",
+  "updatedAt": "2026-10-10T02:11:48.306Z",
   "eligibilityBaseYear": 2025,
   "personas": [
     "1인가구",
@@ -13,7 +13,7 @@
     "수급자",
     "무주택"
   ],
-  "count": 11,
+  "count": 10,
   "items": [
     {
       "source": "청약홈",
@@ -31,7 +31,7 @@
       "status": "upcoming",
       "statusLabel": "예정",
       "statusOrder": 2,
-      "daysLeft": 5,
+      "daysLeft": 4,
       "personas": [
         "1인가구",
         "예비신혼부부",
@@ -75,7 +75,7 @@
       "status": "upcoming",
       "statusLabel": "예정",
       "statusOrder": 2,
-      "daysLeft": 6,
+      "daysLeft": 5,
       "personas": [
         "1인가구",
         "예비신혼부부",
@@ -119,7 +119,7 @@
       "status": "upcoming",
       "statusLabel": "예정",
       "statusOrder": 2,
-      "daysLeft": 11,
+      "daysLeft": 10,
       "personas": [
         "1인가구",
         "예비신혼부부",
@@ -300,41 +300,6 @@
       "receiptEnd": "2026-09-21",
       "totalHouseholds": "126",
       "url": "https://www.applyhome.co.kr/ai/aia/selectAPTRemndrLttotPblancDetailView.do?houseManageNo=2026910246&pblancNo=2026910246",
-      "status": "closed",
-      "statusLabel": "마감",
-      "statusOrder": 3,
-      "daysLeft": null,
-      "personas": [
-        "1인가구",
-        "무주택"
-      ],
-      "tags": [
-        "청약홈",
-        "무순위",
-        "1인가구",
-        "무주택"
-      ],
-      "eligibility": {
-        "type": "무순위/잔여",
-        "single": "가능",
-        "income": "보통 소득·자산 요건 없음",
-        "asset": "보통 요건 없음",
-        "note": "해당 주택건설지역 무주택 세대구성원 등 — 요건 대폭 완화(공고별 확인)"
-      }
-    },
-    {
-      "source": "청약홈",
-      "category": "무순위/잔여",
-      "group": "무순위",
-      "detailType": "무순위",
-      "name": "역북 서희스타힐스 프라임시티(조합원 취소분)",
-      "address": "경기도 용인시 처인구 역북동 89-25번지 일원",
-      "areaName": "경기",
-      "announceDate": "2026-09-09",
-      "receiptBegin": "2026-09-14",
-      "receiptEnd": "2026-09-14",
-      "totalHouseholds": "4",
-      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTRemndrLttotPblancDetailView.do?houseManageNo=2026910232&pblancNo=2026910232",
       "status": "closed",
       "statusLabel": "마감",
       "statusOrder": 3,
