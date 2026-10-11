@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-11T08:32:55.479Z",
+  "updatedAt": "2026-10-11T16:35:37.203Z",
   "eligibilityBaseYear": 2025,
   "personas": [
     "1인가구",
@@ -13,7 +13,7 @@
     "수급자",
     "무주택"
   ],
-  "count": 9,
+  "count": 7,
   "items": [
     {
       "source": "청약홈",
@@ -31,7 +31,7 @@
       "status": "upcoming",
       "statusLabel": "예정",
       "statusOrder": 2,
-      "daysLeft": 3,
+      "daysLeft": 2,
       "personas": [
         "1인가구",
         "예비신혼부부",
@@ -75,7 +75,7 @@
       "status": "upcoming",
       "statusLabel": "예정",
       "statusOrder": 2,
-      "daysLeft": 4,
+      "daysLeft": 3,
       "personas": [
         "1인가구",
         "예비신혼부부",
@@ -119,7 +119,7 @@
       "status": "upcoming",
       "statusLabel": "예정",
       "statusOrder": 2,
-      "daysLeft": 9,
+      "daysLeft": 8,
       "personas": [
         "1인가구",
         "예비신혼부부",
@@ -210,50 +210,6 @@
     },
     {
       "source": "청약홈",
-      "category": "APT",
-      "group": "분양",
-      "detailType": "APT",
-      "name": "더샵 분당하이스트",
-      "address": "경기도 성남시 분당구 정자동 90번지",
-      "areaName": "경기",
-      "announceDate": "2026-09-11",
-      "receiptBegin": "2026-09-22",
-      "receiptEnd": "2026-09-28",
-      "totalHouseholds": "143",
-      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTLttotPblancDetail.do?houseManageNo=2026000103&pblancNo=2026000103",
-      "status": "closed",
-      "statusLabel": "마감",
-      "statusOrder": 3,
-      "daysLeft": null,
-      "personas": [
-        "1인가구",
-        "예비신혼부부",
-        "신혼부부",
-        "생애최초",
-        "다자녀",
-        "노부모부양"
-      ],
-      "tags": [
-        "청약홈",
-        "APT",
-        "분양",
-        "1인가구",
-        "예비신혼부부",
-        "신혼부부",
-        "생애최초",
-        "다자녀",
-        "노부모부양"
-      ],
-      "eligibility": {
-        "type": "민영분양",
-        "single": "가능",
-        "income": "일반공급은 보통 소득·자산 요건 없음(추첨·가점)",
-        "asset": "일반공급 요건 없음",
-        "note": "청약통장+무주택/세대주 등. 특별공급은 유형별 소득요건 별도"
-      }
-    },
-    {
-      "source": "청약홈",
       "category": "무순위/잔여",
       "group": "무순위",
       "detailType": "무순위",
@@ -320,42 +276,6 @@
         "income": "보통 소득·자산 요건 없음",
         "asset": "보통 요건 없음",
         "note": "해당 주택건설지역 무주택 세대구성원 등 — 요건 대폭 완화(공고별 확인)"
-      }
-    },
-    {
-      "source": "LH",
-      "category": "신혼희망타운",
-      "group": "분양",
-      "detailType": "행복주택(신혼희망)",
-      "name": "성남금토 A-4블록 신혼희망타운 행복주택 입주자 모집공고",
-      "address": "",
-      "areaName": "경기도",
-      "announceDate": "2026.08.11",
-      "receiptBegin": "",
-      "receiptEnd": "",
-      "totalHouseholds": "",
-      "url": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020534&ccrCnntSysDsCd=03&uppAisTpCd=39&aisTpCd=42&mi=1026",
-      "status": "closed",
-      "statusLabel": "마감",
-      "statusOrder": 3,
-      "daysLeft": null,
-      "personas": [
-        "예비신혼부부",
-        "신혼부부"
-      ],
-      "tags": [
-        "LH",
-        "행복주택",
-        "분양",
-        "예비신혼부부",
-        "신혼부부"
-      ],
-      "eligibility": {
-        "type": "신혼희망타운",
-        "single": "불가",
-        "income": "도시근로자 월평균소득 130% 이하(맞벌이 140%)",
-        "asset": "총자산 약 3.54억 이하(2025)",
-        "note": "혼인 7년 이내·예비부부·6세 이하 자녀 한부모 — 1인 단독 신청 불가"
       }
     }
   ]
