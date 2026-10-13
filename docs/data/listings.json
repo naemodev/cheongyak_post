@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-12T12:54:33.650Z",
+  "updatedAt": "2026-10-13T03:25:37.289Z",
   "eligibilityBaseYear": 2025,
   "personas": [
     "1인가구",
@@ -15,6 +15,50 @@
   ],
   "count": 7,
   "items": [
+    {
+      "source": "청약홈",
+      "category": "APT",
+      "group": "분양",
+      "detailType": "APT",
+      "name": "용인 양지 서희스타힐스 하이뷰 (조합원 취소분)",
+      "address": "경기도 용인시 처인구 양지읍 양지리 산105-8번지 일원",
+      "areaName": "경기",
+      "announceDate": "2026-10-02",
+      "receiptBegin": "2026-10-13",
+      "receiptEnd": "2026-10-14",
+      "totalHouseholds": "48",
+      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTLttotPblancDetail.do?houseManageNo=2026000386&pblancNo=2026000386",
+      "status": "closing",
+      "statusLabel": "마감임박",
+      "statusOrder": 0,
+      "daysLeft": 1,
+      "personas": [
+        "1인가구",
+        "예비신혼부부",
+        "신혼부부",
+        "생애최초",
+        "다자녀",
+        "노부모부양"
+      ],
+      "tags": [
+        "청약홈",
+        "APT",
+        "분양",
+        "1인가구",
+        "예비신혼부부",
+        "신혼부부",
+        "생애최초",
+        "다자녀",
+        "노부모부양"
+      ],
+      "eligibility": {
+        "type": "민영분양",
+        "single": "가능",
+        "income": "일반공급은 보통 소득·자산 요건 없음(추첨·가점)",
+        "asset": "일반공급 요건 없음",
+        "note": "청약통장+무주택/세대주 등. 특별공급은 유형별 소득요건 별도"
+      }
+    },
     {
       "source": "LH",
       "category": "신혼희망타운",
@@ -56,50 +100,6 @@
       "category": "APT",
       "group": "분양",
       "detailType": "APT",
-      "name": "용인 양지 서희스타힐스 하이뷰 (조합원 취소분)",
-      "address": "경기도 용인시 처인구 양지읍 양지리 산105-8번지 일원",
-      "areaName": "경기",
-      "announceDate": "2026-10-02",
-      "receiptBegin": "2026-10-13",
-      "receiptEnd": "2026-10-14",
-      "totalHouseholds": "48",
-      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTLttotPblancDetail.do?houseManageNo=2026000386&pblancNo=2026000386",
-      "status": "upcoming",
-      "statusLabel": "예정",
-      "statusOrder": 2,
-      "daysLeft": 2,
-      "personas": [
-        "1인가구",
-        "예비신혼부부",
-        "신혼부부",
-        "생애최초",
-        "다자녀",
-        "노부모부양"
-      ],
-      "tags": [
-        "청약홈",
-        "APT",
-        "분양",
-        "1인가구",
-        "예비신혼부부",
-        "신혼부부",
-        "생애최초",
-        "다자녀",
-        "노부모부양"
-      ],
-      "eligibility": {
-        "type": "민영분양",
-        "single": "가능",
-        "income": "일반공급은 보통 소득·자산 요건 없음(추첨·가점)",
-        "asset": "일반공급 요건 없음",
-        "note": "청약통장+무주택/세대주 등. 특별공급은 유형별 소득요건 별도"
-      }
-    },
-    {
-      "source": "청약홈",
-      "category": "APT",
-      "group": "분양",
-      "detailType": "APT",
       "name": "진도 승원팰리체 더 테라스",
       "address": "전남광주통합특별시 진도군 진도읍 교동리 618번지 일원",
       "areaName": "전남",
@@ -111,7 +111,7 @@
       "status": "upcoming",
       "statusLabel": "예정",
       "statusOrder": 2,
-      "daysLeft": 3,
+      "daysLeft": 2,
       "personas": [
         "1인가구",
         "예비신혼부부",
@@ -155,7 +155,7 @@
       "status": "upcoming",
       "statusLabel": "예정",
       "statusOrder": 2,
-      "daysLeft": 8,
+      "daysLeft": 7,
       "personas": [
         "1인가구",
         "예비신혼부부",
@@ -182,31 +182,6 @@
         "asset": "일반공급 요건 없음",
         "note": "청약통장+무주택/세대주 등. 특별공급은 유형별 소득요건 별도"
       }
-    },
-    {
-      "source": "LH",
-      "category": "LH 임대",
-      "group": "임대",
-      "detailType": "가정어린이집",
-      "name": "성남신촌 A1블록 가정어린이집 운영예정자 모집공고",
-      "address": "",
-      "areaName": "경기도",
-      "announceDate": "2026.09.28",
-      "receiptBegin": "",
-      "receiptEnd": "",
-      "totalHouseholds": "",
-      "url": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020812&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=40&mi=1026",
-      "status": "upcoming",
-      "statusLabel": "예정",
-      "statusOrder": 2,
-      "daysLeft": null,
-      "personas": [],
-      "tags": [
-        "LH",
-        "가정어린이집",
-        "임대"
-      ],
-      "eligibility": null
     },
     {
       "source": "청약홈",
@@ -277,6 +252,31 @@
         "asset": "보통 요건 없음",
         "note": "해당 주택건설지역 무주택 세대구성원 등 — 요건 대폭 완화(공고별 확인)"
       }
+    },
+    {
+      "source": "LH",
+      "category": "LH 임대",
+      "group": "임대",
+      "detailType": "가정어린이집",
+      "name": "성남신촌 A1블록 가정어린이집 운영예정자 모집공고",
+      "address": "",
+      "areaName": "경기도",
+      "announceDate": "2026.09.28",
+      "receiptBegin": "",
+      "receiptEnd": "",
+      "totalHouseholds": "",
+      "url": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300020812&ccrCnntSysDsCd=03&uppAisTpCd=06&aisTpCd=40&mi=1026",
+      "status": "closed",
+      "statusLabel": "마감",
+      "statusOrder": 3,
+      "daysLeft": null,
+      "personas": [],
+      "tags": [
+        "LH",
+        "가정어린이집",
+        "임대"
+      ],
+      "eligibility": null
     }
   ]
 }
