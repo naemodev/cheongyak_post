@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-15T13:12:24.531Z",
+  "updatedAt": "2026-10-16T01:04:06.037Z",
   "sent": [
     "APT:2026820004:announce",
     "무순위/잔여:2026910130:announce",
@@ -76,6 +76,7 @@
     "APT:2026000386:open",
     "APT:2026000386:closing",
     "APT:2026000466:open",
-    "APT:2026000466:closing"
+    "APT:2026000466:closing",
+    "무순위/잔여:2026910261:announce"
   ]
 }
