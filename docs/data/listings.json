@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T13:26:51.107Z",
+  "updatedAt": "2026-10-21T01:24:19.076Z",
   "eligibilityBaseYear": 2025,
   "personas": [
     "1인가구",
@@ -28,10 +28,10 @@
       "receiptEnd": "2026-10-20",
       "totalHouseholds": "19",
       "url": "https://www.applyhome.co.kr/ai/aia/selectAPTLttotPblancDetail.do?houseManageNo=2026000471&pblancNo=2026000471",
-      "status": "closing",
-      "statusLabel": "마감임박",
-      "statusOrder": 0,
-      "daysLeft": 0,
+      "status": "closed",
+      "statusLabel": "마감",
+      "statusOrder": 3,
+      "daysLeft": null,
       "personas": [
         "1인가구",
         "예비신혼부부",
@@ -57,41 +57,6 @@
         "income": "일반공급은 보통 소득·자산 요건 없음(추첨·가점)",
         "asset": "일반공급 요건 없음",
         "note": "청약통장+무주택/세대주 등. 특별공급은 유형별 소득요건 별도"
-      }
-    },
-    {
-      "source": "청약홈",
-      "category": "무순위/잔여",
-      "group": "무순위",
-      "detailType": "무순위",
-      "name": "올 뉴 챔피언스시티 1차",
-      "address": "전남광주통합특별시 북구 임동 100-1 일원 (구)전방·일신방직 부지 지구단위계획구역 A2BL)",
-      "areaName": "광주",
-      "announceDate": "2026-10-15",
-      "receiptBegin": "2026-10-20",
-      "receiptEnd": "2026-10-20",
-      "totalHouseholds": "729",
-      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTRemndrLttotPblancDetailView.do?houseManageNo=2026910261&pblancNo=2026910261",
-      "status": "closing",
-      "statusLabel": "마감임박",
-      "statusOrder": 0,
-      "daysLeft": 0,
-      "personas": [
-        "1인가구",
-        "무주택"
-      ],
-      "tags": [
-        "청약홈",
-        "무순위",
-        "1인가구",
-        "무주택"
-      ],
-      "eligibility": {
-        "type": "무순위/잔여",
-        "single": "가능",
-        "income": "보통 소득·자산 요건 없음",
-        "asset": "보통 요건 없음",
-        "note": "해당 주택건설지역 무주택 세대구성원 등 — 요건 대폭 완화(공고별 확인)"
       }
     },
     {
@@ -180,6 +145,41 @@
         "income": "일반공급은 보통 소득·자산 요건 없음(추첨·가점)",
         "asset": "일반공급 요건 없음",
         "note": "청약통장+무주택/세대주 등. 특별공급은 유형별 소득요건 별도"
+      }
+    },
+    {
+      "source": "청약홈",
+      "category": "무순위/잔여",
+      "group": "무순위",
+      "detailType": "무순위",
+      "name": "올 뉴 챔피언스시티 1차",
+      "address": "전남광주통합특별시 북구 임동 100-1 일원 (구)전방·일신방직 부지 지구단위계획구역 A2BL)",
+      "areaName": "광주",
+      "announceDate": "2026-10-15",
+      "receiptBegin": "2026-10-20",
+      "receiptEnd": "2026-10-20",
+      "totalHouseholds": "729",
+      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTRemndrLttotPblancDetailView.do?houseManageNo=2026910261&pblancNo=2026910261",
+      "status": "closed",
+      "statusLabel": "마감",
+      "statusOrder": 3,
+      "daysLeft": null,
+      "personas": [
+        "1인가구",
+        "무주택"
+      ],
+      "tags": [
+        "청약홈",
+        "무순위",
+        "1인가구",
+        "무주택"
+      ],
+      "eligibility": {
+        "type": "무순위/잔여",
+        "single": "가능",
+        "income": "보통 소득·자산 요건 없음",
+        "asset": "보통 요건 없음",
+        "note": "해당 주택건설지역 무주택 세대구성원 등 — 요건 대폭 완화(공고별 확인)"
       }
     },
     {
