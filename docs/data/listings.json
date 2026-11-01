@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T09:05:46.033Z",
+  "updatedAt": "2026-11-01T17:03:05.443Z",
   "eligibilityBaseYear": 2025,
   "personas": [
     "1인가구",
@@ -13,7 +13,7 @@
     "수급자",
     "무주택"
   ],
-  "count": 9,
+  "count": 8,
   "items": [
     {
       "source": "청약홈",
@@ -28,10 +28,10 @@
       "receiptEnd": "2026-11-02",
       "totalHouseholds": "58",
       "url": "https://www.applyhome.co.kr/ai/aia/selectAPTRemndrLttotPblancDetailView.do?houseManageNo=2026910275&pblancNo=2026910275",
-      "status": "upcoming",
-      "statusLabel": "예정",
-      "statusOrder": 2,
-      "daysLeft": 1,
+      "status": "closing",
+      "statusLabel": "마감임박",
+      "statusOrder": 0,
+      "daysLeft": 0,
       "personas": [
         "1인가구",
         "무주택"
@@ -66,7 +66,7 @@
       "status": "upcoming",
       "statusLabel": "예정",
       "statusOrder": 2,
-      "daysLeft": 2,
+      "daysLeft": 1,
       "personas": [
         "1인가구",
         "무주택"
@@ -101,7 +101,7 @@
       "status": "upcoming",
       "statusLabel": "예정",
       "statusOrder": 2,
-      "daysLeft": 11,
+      "daysLeft": 10,
       "personas": [
         "1인가구",
         "예비신혼부부",
@@ -186,50 +186,6 @@
       "receiptEnd": "2026-10-15",
       "totalHouseholds": "58",
       "url": "https://www.applyhome.co.kr/ai/aia/selectAPTLttotPblancDetail.do?houseManageNo=2026000466&pblancNo=2026000466",
-      "status": "closed",
-      "statusLabel": "마감",
-      "statusOrder": 3,
-      "daysLeft": null,
-      "personas": [
-        "1인가구",
-        "예비신혼부부",
-        "신혼부부",
-        "생애최초",
-        "다자녀",
-        "노부모부양"
-      ],
-      "tags": [
-        "청약홈",
-        "APT",
-        "분양",
-        "1인가구",
-        "예비신혼부부",
-        "신혼부부",
-        "생애최초",
-        "다자녀",
-        "노부모부양"
-      ],
-      "eligibility": {
-        "type": "민영분양",
-        "single": "가능",
-        "income": "일반공급은 보통 소득·자산 요건 없음(추첨·가점)",
-        "asset": "일반공급 요건 없음",
-        "note": "청약통장+무주택/세대주 등. 특별공급은 유형별 소득요건 별도"
-      }
-    },
-    {
-      "source": "청약홈",
-      "category": "APT",
-      "group": "분양",
-      "detailType": "APT",
-      "name": "용인 양지 서희스타힐스 하이뷰 (조합원 취소분)",
-      "address": "경기도 용인시 처인구 양지읍 양지리 산105-8번지 일원",
-      "areaName": "경기",
-      "announceDate": "2026-10-02",
-      "receiptBegin": "2026-10-13",
-      "receiptEnd": "2026-10-14",
-      "totalHouseholds": "48",
-      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTLttotPblancDetail.do?houseManageNo=2026000386&pblancNo=2026000386",
       "status": "closed",
       "statusLabel": "마감",
       "statusOrder": 3,
