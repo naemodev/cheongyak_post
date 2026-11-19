@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-18T13:43:53.299Z",
+  "updatedAt": "2026-11-19T04:01:16.249Z",
   "eligibilityBaseYear": 2025,
   "personas": [
     "1인가구",
@@ -13,75 +13,32 @@
     "수급자",
     "무주택"
   ],
-  "count": 9,
+  "count": 10,
   "items": [
-    {
-      "source": "청약홈",
-      "category": "APT",
-      "group": "분양",
-      "detailType": "APT",
-      "name": "제일풍경채 광주 포에듀",
-      "address": "경기도 광주시 탄벌동 203-4번지 일원 (탄벌A지구 A5블럭)",
-      "areaName": "경기",
-      "announceDate": "2026-11-06",
-      "receiptBegin": "2026-11-17",
-      "receiptEnd": "2026-11-18",
-      "totalHouseholds": "572",
-      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTLttotPblancDetail.do?houseManageNo=2026000557&pblancNo=2026000557",
-      "status": "closing",
-      "statusLabel": "마감임박",
-      "statusOrder": 0,
-      "daysLeft": 0,
-      "personas": [
-        "1인가구",
-        "예비신혼부부",
-        "신혼부부",
-        "생애최초",
-        "다자녀",
-        "노부모부양"
-      ],
-      "tags": [
-        "청약홈",
-        "APT",
-        "분양",
-        "1인가구",
-        "예비신혼부부",
-        "신혼부부",
-        "생애최초",
-        "다자녀",
-        "노부모부양"
-      ],
-      "eligibility": {
-        "type": "민영분양",
-        "single": "가능",
-        "income": "일반공급은 보통 소득·자산 요건 없음(추첨·가점)",
-        "asset": "일반공급 요건 없음",
-        "note": "청약통장+무주택/세대주 등. 특별공급은 유형별 소득요건 별도"
-      }
-    },
     {
       "source": "청약홈",
       "category": "무순위/잔여",
       "group": "무순위",
-      "detailType": "무순위",
-      "name": "용인 양지 서희스타힐스 하이뷰 (조합원 취소분)",
-      "address": "경기도 용인시 처인구 양지읍 양지리 산105-8번지 일원",
+      "detailType": "불법행위 재공급",
+      "name": "광주 송정 중흥S-클래스 파크뷰",
+      "address": "경기도 광주시 광주대로 142",
       "areaName": "경기",
-      "announceDate": "2026-11-13",
-      "receiptBegin": "2026-11-18",
-      "receiptEnd": "2026-11-18",
-      "totalHouseholds": "19",
-      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTRemndrLttotPblancDetailView.do?houseManageNo=2026910299&pblancNo=2026910299",
-      "status": "closing",
-      "statusLabel": "마감임박",
-      "statusOrder": 0,
-      "daysLeft": 0,
+      "announceDate": "2026-11-18",
+      "receiptBegin": "2026-11-23",
+      "receiptEnd": "2026-11-23",
+      "totalHouseholds": "2",
+      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTRemndrLttotPblancDetailView.do?houseManageNo=2026930046&pblancNo=2026930046",
+      "status": "upcoming",
+      "statusLabel": "예정",
+      "statusOrder": 2,
+      "daysLeft": 4,
       "personas": [
         "1인가구",
         "무주택"
       ],
       "tags": [
         "청약홈",
+        "불법행위재공급",
         "무순위",
         "1인가구",
         "무주택"
@@ -171,6 +128,50 @@
       "category": "APT",
       "group": "분양",
       "detailType": "APT",
+      "name": "제일풍경채 광주 포에듀",
+      "address": "경기도 광주시 탄벌동 203-4번지 일원 (탄벌A지구 A5블럭)",
+      "areaName": "경기",
+      "announceDate": "2026-11-06",
+      "receiptBegin": "2026-11-17",
+      "receiptEnd": "2026-11-18",
+      "totalHouseholds": "572",
+      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTLttotPblancDetail.do?houseManageNo=2026000557&pblancNo=2026000557",
+      "status": "closed",
+      "statusLabel": "마감",
+      "statusOrder": 3,
+      "daysLeft": null,
+      "personas": [
+        "1인가구",
+        "예비신혼부부",
+        "신혼부부",
+        "생애최초",
+        "다자녀",
+        "노부모부양"
+      ],
+      "tags": [
+        "청약홈",
+        "APT",
+        "분양",
+        "1인가구",
+        "예비신혼부부",
+        "신혼부부",
+        "생애최초",
+        "다자녀",
+        "노부모부양"
+      ],
+      "eligibility": {
+        "type": "민영분양",
+        "single": "가능",
+        "income": "일반공급은 보통 소득·자산 요건 없음(추첨·가점)",
+        "asset": "일반공급 요건 없음",
+        "note": "청약통장+무주택/세대주 등. 특별공급은 유형별 소득요건 별도"
+      }
+    },
+    {
+      "source": "청약홈",
+      "category": "APT",
+      "group": "분양",
+      "detailType": "APT",
       "name": "중앙하이츠 구성 플랫폼시티",
       "address": "경기도 용인시 기흥구 마북동 298-1번지 일원",
       "areaName": "경기",
@@ -208,6 +209,41 @@
         "income": "일반공급은 보통 소득·자산 요건 없음(추첨·가점)",
         "asset": "일반공급 요건 없음",
         "note": "청약통장+무주택/세대주 등. 특별공급은 유형별 소득요건 별도"
+      }
+    },
+    {
+      "source": "청약홈",
+      "category": "무순위/잔여",
+      "group": "무순위",
+      "detailType": "무순위",
+      "name": "용인 양지 서희스타힐스 하이뷰 (조합원 취소분)",
+      "address": "경기도 용인시 처인구 양지읍 양지리 산105-8번지 일원",
+      "areaName": "경기",
+      "announceDate": "2026-11-13",
+      "receiptBegin": "2026-11-18",
+      "receiptEnd": "2026-11-18",
+      "totalHouseholds": "19",
+      "url": "https://www.applyhome.co.kr/ai/aia/selectAPTRemndrLttotPblancDetailView.do?houseManageNo=2026910299&pblancNo=2026910299",
+      "status": "closed",
+      "statusLabel": "마감",
+      "statusOrder": 3,
+      "daysLeft": null,
+      "personas": [
+        "1인가구",
+        "무주택"
+      ],
+      "tags": [
+        "청약홈",
+        "무순위",
+        "1인가구",
+        "무주택"
+      ],
+      "eligibility": {
+        "type": "무순위/잔여",
+        "single": "가능",
+        "income": "보통 소득·자산 요건 없음",
+        "asset": "보통 요건 없음",
+        "note": "해당 주택건설지역 무주택 세대구성원 등 — 요건 대폭 완화(공고별 확인)"
       }
     },
     {
