@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T13:09:14.280Z",
+  "updatedAt": "2026-11-23T03:36:26.330Z",
   "eligibilityBaseYear": 2025,
   "personas": [
     "1인가구",
@@ -28,10 +28,10 @@
       "receiptEnd": "2026-11-23",
       "totalHouseholds": "2",
       "url": "https://www.applyhome.co.kr/ai/aia/selectAPTRemndrLttotPblancDetailView.do?houseManageNo=2026930046&pblancNo=2026930046",
-      "status": "upcoming",
-      "statusLabel": "예정",
-      "statusOrder": 2,
-      "daysLeft": 1,
+      "status": "closing",
+      "statusLabel": "마감임박",
+      "statusOrder": 0,
+      "daysLeft": 0,
       "personas": [
         "1인가구",
         "무주택"
@@ -40,6 +40,42 @@
         "청약홈",
         "불법행위재공급",
         "무순위",
+        "1인가구",
+        "무주택"
+      ],
+      "eligibility": {
+        "type": "무순위/잔여",
+        "single": "가능",
+        "income": "보통 소득·자산 요건 없음",
+        "asset": "보통 요건 없음",
+        "note": "해당 주택건설지역 무주택 세대구성원 등 — 요건 대폭 완화(공고별 확인)"
+      }
+    },
+    {
+      "source": "LH",
+      "category": "LH 분양",
+      "group": "분양",
+      "detailType": "분양주택",
+      "name": "경기남부권(수원·용인 광교) 공가세대 일반매각 공고(무순위, 유주택자 가능)",
+      "address": "",
+      "areaName": "경기도",
+      "announceDate": "2026.11.05",
+      "receiptBegin": "",
+      "receiptEnd": "",
+      "totalHouseholds": "",
+      "url": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300021009&ccrCnntSysDsCd=03&uppAisTpCd=05&aisTpCd=05&mi=1027",
+      "status": "open",
+      "statusLabel": "접수중",
+      "statusOrder": 1,
+      "daysLeft": null,
+      "personas": [
+        "1인가구",
+        "무주택"
+      ],
+      "tags": [
+        "LH",
+        "분양주택",
+        "분양",
         "1인가구",
         "무주택"
       ],
@@ -67,7 +103,7 @@
       "status": "upcoming",
       "statusLabel": "예정",
       "statusOrder": 2,
-      "daysLeft": 3,
+      "daysLeft": 2,
       "personas": [
         "1인가구",
         "무주택"
@@ -102,7 +138,7 @@
       "status": "upcoming",
       "statusLabel": "예정",
       "statusOrder": 2,
-      "daysLeft": 10,
+      "daysLeft": 9,
       "personas": [
         "1인가구",
         "예비신혼부부",
@@ -128,42 +164,6 @@
         "income": "일반공급은 보통 소득·자산 요건 없음(추첨·가점)",
         "asset": "일반공급 요건 없음",
         "note": "청약통장+무주택/세대주 등. 특별공급은 유형별 소득요건 별도"
-      }
-    },
-    {
-      "source": "LH",
-      "category": "LH 분양",
-      "group": "분양",
-      "detailType": "분양주택",
-      "name": "경기남부권(수원·용인 광교) 공가세대 일반매각 공고(무순위, 유주택자 가능)",
-      "address": "",
-      "areaName": "경기도",
-      "announceDate": "2026.11.05",
-      "receiptBegin": "",
-      "receiptEnd": "",
-      "totalHouseholds": "",
-      "url": "https://apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancInfo.do?panId=2015122300021009&ccrCnntSysDsCd=03&uppAisTpCd=05&aisTpCd=05&mi=1027",
-      "status": "upcoming",
-      "statusLabel": "예정",
-      "statusOrder": 2,
-      "daysLeft": null,
-      "personas": [
-        "1인가구",
-        "무주택"
-      ],
-      "tags": [
-        "LH",
-        "분양주택",
-        "분양",
-        "1인가구",
-        "무주택"
-      ],
-      "eligibility": {
-        "type": "무순위/잔여",
-        "single": "가능",
-        "income": "보통 소득·자산 요건 없음",
-        "asset": "보통 요건 없음",
-        "note": "해당 주택건설지역 무주택 세대구성원 등 — 요건 대폭 완화(공고별 확인)"
       }
     },
     {
